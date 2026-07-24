@@ -414,6 +414,8 @@ objects.forEach(obj=>{
 // POPUP CONTENT
 // ===========================
 
+let openedQualities = new Set();
+
 const qualities = {
 
    childish: {
@@ -548,7 +550,9 @@ Especially old people ke liye jo respect tum dikhati ho, woh mujhe bahut achha l
 
 function openCard(name){
 
-   console.log(name);
+    openedQualities.add(name);
+
+   console.log(openedQualities.size);
 
    const data = qualities[name];
 
