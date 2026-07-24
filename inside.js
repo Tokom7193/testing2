@@ -582,11 +582,13 @@ function openCard(name){
     // ⭐ Show Final Surprise after all 8 are opened
     if (openedQualities.size === 8) {
 
-        document
-            .getElementById("finalUnlock")
-            .classList.add("show");
+    alert("ALL 8 OPENED!");
 
-    }
+    document
+        .getElementById("finalUnlock")
+        .classList.add("show");
+
+}
 
     
    console.log(openedQualities.size);
