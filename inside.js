@@ -552,6 +552,21 @@ function openCard(name){
 
     openedQualities.add(name);
 
+    const bubbleMap = {
+    childish: "b1",
+    guarded: "b2",
+    kind: "b3",
+    authentic: "b4",
+    independent: "b5",
+    principled: "b6",
+    filial: "b7",
+    respectful: "b8"
+};
+
+document
+    .getElementById(bubbleMap[name])
+    .classList.add("opened");
+
    console.log(openedQualities.size);
 
    const data = qualities[name];
