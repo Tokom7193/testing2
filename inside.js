@@ -580,13 +580,24 @@ function openCard(name){
     });
 
     // ⭐ Show Final Surprise after all 8 are opened
-    if (openedQualities.size === 8) {
+if (openedQualities.size === 8) {
 
-    alert("✨ You saw the 8 things I admire about you.\n\nBut there's still one thing left... ❤️");
+    const alertBox = document.getElementById("glassAlert");
 
-    document
-        .getElementById("finalUnlock")
-        .classList.add("show");
+    alertBox.classList.add("show");
+
+
+    setTimeout(()=>{
+
+        alertBox.classList.remove("show");
+
+
+        document
+            .getElementById("finalUnlock")
+            .classList.add("show");
+
+
+    },2000);
 
 }
 
