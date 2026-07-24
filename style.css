@@ -1087,9 +1087,9 @@ button:hover{
 }
 
 
-.bubble:hover{
+.bubble:hover:not(.opened){
 
-    transform:scale(1.12);
+    transform:scale(1.25);
 
 }
 
@@ -1252,7 +1252,7 @@ button:hover{
 
 
 
-.bubble:active{
+.bubble:active:not(.opened){
 
     transform:scale(1.15);
 
