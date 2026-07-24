@@ -563,9 +563,8 @@ function openCard(name){
     respectful: "b8"
 };
 
-document
-    .getElementById(bubbleMap[name])
-    .classList.add("opened");
+document.getElementById(bubbleMap[name]).style.background = "red";
+document.getElementById(bubbleMap[name]).style.border = "5px solid yellow";
 
    console.log(openedQualities.size);
 
