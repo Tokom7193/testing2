@@ -1684,6 +1684,6 @@ body.leave{
         0 0 45px rgba(0,255,255,.8),
         inset 0 0 20px rgba(255,255,255,.25) !important;
 
-    transform: scale(0.90);
+    transform: scale(0.75);
 
 }
