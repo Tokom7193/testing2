@@ -91,20 +91,21 @@ while (!safe && attempts < 100) {
 
     let obj={
 
-        el:bubble,
+    el:bubble,
 
-        x:x,
+    x:x,
 
-        y:y,
+    y:y,
 
-        vx:random(-2,2),
+    vx:random(-2,2),
 
-        vy:random(-2,2),
+    vy:random(-2,2),
 
-        line:lines[index]
+    line:lines[index],
 
-    };
+    opened:false
 
+};
 
     objects.push(obj);
 
@@ -355,6 +356,11 @@ if (speed > MAX_SPEED) {
 
         obj.el.style.top=obj.y+"px";
 
+        if (obj.opened) {
+
+          obj.el.classList.add("opened");
+
+}
 
 
         updateLines(obj);
@@ -563,9 +569,16 @@ function openCard(name){
     respectful: "b8"
 };
 
-document.getElementById(bubbleMap[name]).style.background = "red";
-document.getElementById(bubbleMap[name]).style.border = "5px solid yellow";
+objects.forEach(obj => {
 
+    if (obj.el.id === bubbleMap[name]) {
+
+        obj.opened = true;
+
+    }
+
+});
+    
    console.log(openedQualities.size);
 
    const data = qualities[name];
