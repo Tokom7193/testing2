@@ -290,7 +290,7 @@ function updateLines(obj){
 
 function animate(){
 
-console.log(objects);
+// console.log(objects);
 
     objects.forEach(obj=>{
 
