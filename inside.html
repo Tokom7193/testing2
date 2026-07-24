@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#081322">
+
+    <title>What I Like About You</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="inside">
+
+    <!-- Connection Lines -->
+
+    <svg class="lines" aria-hidden="true">
+
+        <line id="line1"></line>
+        <line id="line2"></line>
+        <line id="line3"></line>
+        <line id="line4"></line>
+        <line id="line5"></line>
+        <line id="line6"></line>
+        <line id="line7"></line>
+        <line id="line8"></line>
+
+    </svg>
+
+    <!-- Center Circle -->
+
+    <div class="center">
+
+        <h1>
+            What I Like About You ❤️
+        </h1>
+
+    </div>
+
+    <!-- Floating Bubbles -->
+
+    <div class="bubble" id="b1" onclick="openCard('childish')">
+        <span class="emoji">👧</span>
+        <span class="label">Childish</span>
+    </div>
+
+    <div class="bubble" id="b2" onclick="openCard('guarded')">
+        <span class="emoji">🛡️</span>
+        <span class="label">Guarded</span>
+    </div>
+
+    <div class="bubble" id="b3" onclick="openCard('kind')">
+        <span class="emoji">❤️</span>
+        <span class="label">Kind</span>
+    </div>
+
+    <div class="bubble" id="b4" onclick="openCard('authentic')">
+        <span class="emoji">🎭</span>
+        <span class="label">Authentic</span>
+    </div>
+
+    <div class="bubble" id="b5" onclick="openCard('independent')">
+        <span class="emoji">💪</span>
+        <span class="label">Independent</span>
+    </div>
+
+    <div class="bubble" id="b6" onclick="openCard('principled')">
+        <span class="emoji">⚖️</span>
+        <span class="label">Principled</span>
+    </div>
+
+    <div class="bubble" id="b7" onclick="openCard('filial')">
+        <span class="emoji">👪</span>
+        <span class="label">Filial</span>
+    </div>
+
+    <div class="bubble" id="b8" onclick="openCard('respectful')">
+        <span class="emoji">🤝</span>
+        <span class="label">Respectful</span>
+    </div>
+
+    <!-- Popup -->
+
+    <div id="overlay" class="overlay" aria-hidden="true">
+
+        <div class="popup">
+
+            <div class="popupImage"></div>
+
+            <div class="popup-header">
+
+                <div id="popupEmoji" class="popup-emoji">
+                    👧
+                </div>
+
+                <h2 id="popupTitle">
+                    Childish
+                </h2>
+
+                <div class="divider"></div>
+
+            </div>
+
+            <p id="popupText"></p>
+
+            <div id="popupAction" class="popupAction" onclick="closeCard()"></div>
+
+        </div>
+
+    </div>
+
+    <script src="inside.js" defer></script>
+
+</body>
+
+</html>

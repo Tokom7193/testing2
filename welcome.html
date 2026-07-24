@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#081322">
+
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="welcome-page">
+
+    <!-- Moon -->
+    <div class="moon" aria-hidden="true"></div>
+
+    <!-- Stars -->
+    <div class="stars" aria-hidden="true">
+
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+
+    </div>
+
+    <!-- Shooting Stars -->
+    <div class="shooting-star s1" aria-hidden="true"></div>
+    <div class="shooting-star s2" aria-hidden="true"></div>
+    <div class="shooting-star s3" aria-hidden="true"></div>
+
+    <!-- Clouds -->
+    <div class="cloud c1" aria-hidden="true"></div>
+    <div class="cloud c2" aria-hidden="true"></div>
+
+    <!-- Welcome Card -->
+    <main class="welcome-card">
+
+        <h2>ACCESS GRANTED</h2>
+
+        <h1>🌙 Welcome SUAR ✨</h1>
+
+        <p>
+            The stars aligned tonight just for you.
+        </p>
+
+        <button id="insideBtn" type="button">
+            See What's Inside 🐷
+        </button>
+
+    </main>
+
+    <script>
+
+        const insideBtn = document.getElementById("insideBtn");
+
+        insideBtn.addEventListener("click", () => {
+
+            document.body.classList.add("leave");
+
+            setTimeout(() => {
+
+                window.location.href = "inside.html";
+
+            }, 1200);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
