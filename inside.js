@@ -582,7 +582,7 @@ function openCard(name){
     // ⭐ Show Final Surprise after all 8 are opened
     if (openedQualities.size === 8) {
 
-    alert("ALL 8 OPENED!");
+    alert("✨ You saw the 8 things I admire about you.\n\nBut there's still one thing left... ❤️");
 
     document
         .getElementById("finalUnlock")
