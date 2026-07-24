@@ -1687,3 +1687,71 @@ body.leave{
     transform: scale(0.85);
 
 }
+/* ==========================================
+   FINAL SURPRISE BUTTON
+========================================== */
+
+.finalUnlock{
+
+    position:fixed;
+
+    left:50%;
+    bottom:40px;
+
+    transform:translateX(-50%) scale(.8);
+
+    padding:18px 36px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:2px solid rgba(255,255,255,.35);
+
+    color:white;
+
+    font-size:22px;
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    z-index:999;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+        opacity .6s ease,
+        transform .6s ease,
+        box-shadow .6s ease;
+
+    box-shadow:
+        0 0 25px rgba(0,255,255,.35);
+
+}
+
+/* Visible state */
+
+.finalUnlock.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+    transform:translateX(-50%) scale(1);
+
+    box-shadow:
+        0 0 25px cyan,
+        0 0 60px rgba(0,255,255,.8);
+
+}
