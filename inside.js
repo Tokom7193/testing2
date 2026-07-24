@@ -559,25 +559,35 @@ function openCard(name){
     openedQualities.add(name);
 
     const bubbleMap = {
-    childish: "b1",
-    guarded: "b2",
-    kind: "b3",
-    authentic: "b4",
-    independent: "b5",
-    principled: "b6",
-    filial: "b7",
-    respectful: "b8"
-};
+        childish: "b1",
+        guarded: "b2",
+        kind: "b3",
+        authentic: "b4",
+        independent: "b5",
+        principled: "b6",
+        filial: "b7",
+        respectful: "b8"
+    };
 
-objects.forEach(obj => {
+    objects.forEach(obj => {
 
-    if (obj.el.id === bubbleMap[name]) {
+        if (obj.el.id === bubbleMap[name]) {
 
-        obj.opened = true;
+            obj.opened = true;
+
+        }
+
+    });
+
+    // ⭐ Show Final Surprise after all 8 are opened
+    if (openedQualities.size === 8) {
+
+        document
+            .getElementById("finalUnlock")
+            .classList.add("show");
 
     }
 
-});
     
    console.log(openedQualities.size);
 
