@@ -1844,20 +1844,26 @@ body.leave{
     position:fixed;
     inset:0;
 
-    background:#000;
-
     display:flex;
     justify-content:center;
     align-items:center;
 
     overflow:hidden;
 
+    background:
+        radial-gradient(circle at center,
+        #081322 0%,
+        #030811 45%,
+        #000 100%);
+
     z-index:5000;
 
     opacity:0;
     visibility:hidden;
 
-    transition:opacity 1s ease;
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
 
 }
 
@@ -1870,35 +1876,89 @@ body.leave{
 
 
 /* ===========================
+   SOFT VIGNETTE
+=========================== */
+
+.endingScreen::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    background:radial-gradient(
+        circle,
+        transparent 40%,
+        rgba(0,0,0,.18) 70%,
+        rgba(0,0,0,.65) 100%
+    );
+
+    z-index:2;
+
+}
+
+
+/* ===========================
    ENDING TEXT
 =========================== */
 
 .endingText{
 
     position:relative;
-    z-index:10;
+    z-index:20;
 
     color:#fff;
 
     font-size:clamp(30px,5vw,58px);
+
     font-weight:700;
 
     letter-spacing:2px;
+
     text-align:center;
 
+    padding:0 20px;
+
     opacity:0;
+
     transform:translateY(20px);
 
     transition:all 1s ease;
 
-    animation:textGlow 5s ease-in-out infinite;
+    animation:
+        textGlow 5s ease-in-out infinite,
+        floatText 7s ease-in-out infinite;
 
 }
 
 .endingScreen.show .endingText{
 
     opacity:1;
+
     transform:translateY(0);
+
+}
+
+
+/* ===========================
+   TEXT ANIMATION
+=========================== */
+
+@keyframes floatText{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
 
 }
 
@@ -1907,16 +1967,17 @@ body.leave{
     0%,100%{
 
         text-shadow:
-        0 0 10px rgba(255,255,255,.25),
-        0 0 20px rgba(0,255,255,.15);
+            0 0 10px rgba(255,255,255,.25),
+            0 0 20px rgba(0,255,255,.12);
 
     }
 
     50%{
 
         text-shadow:
-        0 0 18px rgba(255,255,255,.8),
-        0 0 40px rgba(0,255,255,.45);
+            0 0 18px rgba(255,255,255,.85),
+            0 0 40px rgba(0,255,255,.35),
+            0 0 80px rgba(0,255,255,.15);
 
     }
 
@@ -1930,8 +1991,11 @@ body.leave{
 .endingStars{
 
     position:absolute;
+
     inset:0;
+
     overflow:hidden;
+
     pointer-events:none;
 
 }
@@ -1940,8 +2004,9 @@ body.leave{
 
 .starsFar{
 
-    opacity:.35;
-    animation:starDriftFar 35s ease-in-out infinite;
+    opacity:.30;
+
+    animation:starDriftFar 40s ease-in-out infinite;
 
 }
 
@@ -1949,8 +2014,9 @@ body.leave{
 
 .starsMid{
 
-    opacity:.6;
-    animation:starDriftMid 25s ease-in-out infinite;
+    opacity:.60;
+
+    animation:starDriftMid 28s ease-in-out infinite;
 
 }
 
@@ -1959,12 +2025,15 @@ body.leave{
 .starsNear{
 
     opacity:.95;
+
     animation:starDriftNear 18s ease-in-out infinite;
 
 }
 
 
-/* Individual Stars */
+/* ===========================
+   INDIVIDUAL STARS
+=========================== */
 
 .endingStars span{
 
@@ -1974,7 +2043,9 @@ body.leave{
 
     background:#fff;
 
-    box-shadow:0 0 8px rgba(255,255,255,.9);
+    box-shadow:
+        0 0 6px rgba(255,255,255,.9),
+        0 0 14px rgba(255,255,255,.45);
 
     animation:twinkle ease-in-out infinite;
 
@@ -1990,11 +2061,19 @@ body.leave{
 @keyframes starDriftFar{
 
     0%,100%{
-        transform:translateY(0);
+
+        transform:
+            translateY(0)
+            translateX(0);
+
     }
 
     50%{
-        transform:translateY(-6px);
+
+        transform:
+            translateY(-6px)
+            translateX(4px);
+
     }
 
 }
@@ -2002,11 +2081,19 @@ body.leave{
 @keyframes starDriftMid{
 
     0%,100%{
-        transform:translateY(0);
+
+        transform:
+            translateY(0)
+            translateX(0);
+
     }
 
     50%{
-        transform:translateY(-10px);
+
+        transform:
+            translateY(-10px)
+            translateX(-6px);
+
     }
 
 }
@@ -2014,11 +2101,19 @@ body.leave{
 @keyframes starDriftNear{
 
     0%,100%{
-        transform:translateY(0);
+
+        transform:
+            translateY(0)
+            translateX(0);
+
     }
 
     50%{
-        transform:translateY(-16px);
+
+        transform:
+            translateY(-16px)
+            translateX(8px);
+
     }
 
 }
@@ -2039,22 +2134,22 @@ body.leave{
 
     25%{
 
-        opacity:.5;
-        transform:scale(1);
+        opacity:.45;
+        transform:scale(.9);
 
     }
 
     50%{
 
         opacity:1;
-        transform:scale(1.5);
+        transform:scale(1.4);
 
     }
 
     75%{
 
-        opacity:.6;
-        transform:scale(1.1);
+        opacity:.55;
+        transform:scale(1);
 
     }
 
@@ -2065,4 +2160,5 @@ body.leave{
 
     }
 
+}
 }
