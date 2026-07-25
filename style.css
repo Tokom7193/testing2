@@ -3282,19 +3282,29 @@ body.leave{
 
 }
 
- /* ==========================================
-    TYPEWRITER
+/* ==========================================
+   TYPEWRITER
 ========================================== */
 
 #typewriter{
 
     width:100%;
 
+
     white-space:pre-wrap;
+
 
     word-break:break-word;
 
+
     overflow-wrap:anywhere;
+
+
+    text-align:left;
+
+
+    color:#3b2416;
+
 
 }
 
@@ -3318,6 +3328,16 @@ body.leave{
 
     overflow-wrap:anywhere;
 
+
+    text-align:left;
+
+
+    color:#3b2416;
+
+
+    line-height:1.9;
+
+
 }
 
 
@@ -3334,7 +3354,7 @@ body.leave{
 
 #typewriter p:last-child{
 
-    margin-bottom:10px;
+    margin-bottom:30px;
 
 }
 
@@ -3357,7 +3377,7 @@ body.leave{
     margin-left:5px;
 
 
-    background:#2b2b2b;
+    background:#3b2416;
 
 
     vertical-align:middle;
@@ -3371,8 +3391,6 @@ body.leave{
         cursorBlink .8s infinite;
 
 }
-
-
 /* ==========================================
    CURSOR ANIMATION
 ========================================== */
