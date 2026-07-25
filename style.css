@@ -3495,3 +3495,131 @@ body.leave{
     }
 
 }
+
+/* ==========================================
+   FINAL MESSAGE
+========================================== */
+
+.finalMessage{
+
+    margin-top:40px;
+
+    text-align:center;
+
+
+    opacity:0;
+
+    transform:
+        translateY(25px);
+
+
+    transition:
+
+        opacity 1.5s ease,
+
+        transform 1.5s ease;
+
+
+    pointer-events:none;
+
+}
+
+
+/* When revealed */
+
+.finalMessage.show{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* Heading */
+
+.finalMessage h2{
+
+    margin:0 0 15px;
+
+
+    color:#2b2b2b;
+
+
+    font-family:
+
+        Georgia,
+
+        "Times New Roman",
+
+        serif;
+
+
+    font-size:
+
+        clamp(22px,4vw,36px);
+
+
+    line-height:1.4;
+
+
+}
+
+
+/* Sub text */
+
+.finalMessage p{
+
+    margin:0;
+
+
+    color:#555;
+
+
+    font-family:
+
+        Georgia,
+
+        serif;
+
+
+    font-size:
+
+        clamp(16px,2vw,22px);
+
+}
+
+
+/* Heart glow */
+
+.finalMessage h2::first-letter{
+
+    text-shadow:
+
+        0 0 10px rgba(255,80,120,.5),
+
+        0 0 25px rgba(255,80,120,.35);
+
+}
+
+
+
+/* iPhone adjustment */
+
+@media(max-width:600px){
+
+    .finalMessage{
+
+        margin-top:30px;
+
+    }
+
+
+    .finalMessage h2{
+
+        font-size:24px;
+
+    }
+
+}
