@@ -1,41 +1,45 @@
 const envelope = document.getElementById("envelope");
+const background = document.querySelector(".letterBackground");
 const typewriter = document.getElementById("typewriter");
 const cursor = document.getElementById("cursor");
 
 let opened = false;
 
+/* ==========================================
+   LETTER
+========================================== */
+
 const letterParts = [
 
-`Dear SUAR,
+`I've wanted to tell you something for quite a while.`,
 
-`,
+`This wasn't just a website.
 
-`I've wanted to tell you something for a long time.
-
-`,
-
-`This website wasn't made just to show you something.
-It was made so you could experience how I see you.
-
-`,
+It was my way of showing you what words alone couldn't.`,
 
 `Every page...
 Every animation...
-Every little detail...
+Every tiny detail...
 
-was created with you in mind.
+was made while thinking about you.`,
 
-`,
+`You probably smiled...
+Maybe laughed...
+Maybe wondered what was coming next.
 
-`And now you've reached the final page.
+That was exactly what I hoped for.`,
 
-❤️
+`Thank you for staying until the end.
 
-`,
+❤️`,
 
-`— Rijin`
+`— Abhijith`
 
 ];
+
+/* ==========================================
+   OPEN ENVELOPE
+========================================== */
 
 function openEnvelope(){
 
@@ -49,52 +53,103 @@ function openEnvelope(){
 
         envelope.classList.add("expanded");
 
+        background.classList.add("focus");
+
     },1200);
 
-    setTimeout(startTyping,1800);
+    setTimeout(typeParagraphs,1800);
 
 }
 
-function startTyping(){
+/* ==========================================
+   TYPE PARAGRAPHS
+========================================== */
 
-    let i = 0;
+async function typeParagraphs(){
 
-    function type(){
+    for(const paragraph of letterParts){
 
-        if(i >= letterText.length){
+        const p = document.createElement("p");
 
-            cursor.style.display="none";
-            return;
+        typewriter.appendChild(p);
 
-        }
+        await typeText(p, paragraph);
 
-        typewriter.textContent += letterText.charAt(i);
-
-        typewriter.parentElement.scrollTop =
-            typewriter.parentElement.scrollHeight;
-
-        const ch = letterText.charAt(i);
-
-        i++;
-
-        let speed = 28;
-
-        if(ch === ",")
-
-            speed = 180;
-
-        else if(ch === ".")
-
-            speed = 350;
-
-        else if(ch === "\n")
-
-            speed = 220;
-
-        setTimeout(type,speed);
+        await pause(900);
 
     }
 
-    type();
+    cursor.style.display = "none";
+
+}
+
+/* ==========================================
+   TYPE TEXT
+========================================== */
+
+function typeText(element,text){
+
+    return new Promise(resolve=>{
+
+        let i = 0;
+
+        function type(){
+
+            if(i >= text.length){
+
+                resolve();
+                return;
+
+            }
+
+            const char = text.charAt(i);
+
+            element.textContent += char;
+
+            element.scrollIntoView({
+                behavior:"smooth",
+                block:"end"
+            });
+
+            let speed = 28;
+
+            if(char === ",")
+                speed = 140;
+
+            else if(char === ".")
+                speed = 300;
+
+            else if(char === "!")
+                speed = 350;
+
+            else if(char === "?")
+                speed = 350;
+
+            else if(char === "\n")
+                speed = 180;
+
+            i++;
+
+            setTimeout(type,speed);
+
+        }
+
+        type();
+
+    });
+
+}
+
+/* ==========================================
+   PAUSE
+========================================== */
+
+function pause(ms){
+
+    return new Promise(resolve=>{
+
+        setTimeout(resolve,ms);
+
+    });
 
 }
