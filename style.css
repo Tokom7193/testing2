@@ -2482,28 +2482,35 @@ body.leave{
 
     position:fixed;
 
+
     left:50%;
-    top:50%;
+
+    top:12%;
+
 
     width:min(92vw,760px);
 
-    height:min(88dvh,900px);
+    height:min(84dvh,900px);
+
 
     transform:
-        translate(-50%,-50%)
+
+        translateX(-50%)
         scale(1);
 
 
     aspect-ratio:auto;
 
+
     animation:none;
 
+
     cursor:default;
+
 
     z-index:9999;
 
 }
-
 
 /* ===========================
    BACK
@@ -2704,11 +2711,6 @@ body.leave{
 
 }
 
-
-/* ===========================
-   LETTER PAPER
-=========================== */
-
 /* ==========================================
    LETTER PAPER
 ========================================== */
@@ -2719,12 +2721,7 @@ body.leave{
 
     left:50%;
 
-    top:28%;
-
-
-    transform:
-        translate(-50%,0)
-        scale(.96);
+    top:30%;
 
 
     width:82%;
@@ -2732,26 +2729,34 @@ body.leave{
     height:78%;
 
 
-   background:
+    transform:
 
-    linear-gradient(
-        135deg,
-        #fff7e6 0%,
-        #f4dfb8 50%,
-        #ead09b 100%
-    );
+        translate(-50%,0)
+        scale(.92);
+
+
+    transform-origin:
+
+        top center;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff6df,
+            #f1d7a8
+        );
 
 
     border-radius:12px;
 
 
-   box-shadow:
+    box-shadow:
 
-    0 25px 70px rgba(0,0,0,.45),
+        0 25px 60px rgba(0,0,0,.35),
 
-    inset 0 0 50px rgba(120,80,30,.15),
-
-    0 0 35px rgba(255,220,150,.35);
+        inset 0 0 40px rgba(120,80,30,.15);
 
 
     overflow:hidden;
@@ -2762,20 +2767,19 @@ body.leave{
 
     transition:
 
-        transform .9s cubic-bezier(.22,.61,.36,1),
+        top 1s cubic-bezier(.22,.61,.36,1),
 
-        top .9s cubic-bezier(.22,.61,.36,1),
+        width 1s ease,
 
-        width .9s ease,
+        height 1s ease,
 
-        height .9s ease,
+        transform 1s cubic-bezier(.22,.61,.36,1),
 
-        border-radius .9s ease,
+        border-radius 1s ease,
 
-        box-shadow .9s ease;
+        box-shadow 1s ease;
 
 }
-
 
 /* ==========================================
    EXPANDED LETTER PAPER
@@ -2783,27 +2787,38 @@ body.leave{
 
 .envelope.expanded .letterPaper{
 
+    position:fixed;
+
+
     left:50%;
 
-    top:50%;
+    top:8%;
 
 
-    width:100%;
+    width:min(92vw,760px);
 
-    height:100%;
+    height:84vh;
 
 
     transform:
-        translate(-50%,-50%)
+
+        translate(-50%,0)
         scale(1);
 
 
-    border-radius:22px;
+    transform-origin:
+
+        top center;
+
+
+    border-radius:20px;
 
 
     box-shadow:
 
-        0 25px 70px rgba(0,0,0,.45);
+        0 35px 90px rgba(0,0,0,.45),
+
+        0 0 40px rgba(255,220,150,.35);
 
 }
 
@@ -3000,14 +3015,26 @@ body.leave{
 
 }
 
+/* ==========================================
+   PAPER LIFT OUT OF ENVELOPE
+========================================== */
+
 .envelope.open .letterPaper{
 
+    top:18%;
+
+
     transform:
-        translateX(-50%)
-        translateY(-95px);
+
+        translate(-50%,0)
+        scale(.98);
+
 
     transition:
-        transform 1.1s ease;
+
+        top 1s cubic-bezier(.22,.61,.36,1),
+
+        transform 1s cubic-bezier(.22,.61,.36,1);
 
 }
 
