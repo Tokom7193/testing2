@@ -81,15 +81,25 @@ async function typeParagraphs(){
 
         typewriter.appendChild(p);
 
+
         await typeText(p, paragraph);
 
-        await pause(900);
+
+        // Natural pause between thoughts
+        await pause(1200);
 
     }
 
+
+    // Hide cursor after finishing
     cursor.style.display = "none";
 
+
+    // Optional final reveal
+    showFinalSignature();
+
 }
+
 
 /* ==========================================
    TYPE TEXT
@@ -101,6 +111,7 @@ function typeText(element,text){
 
         let i = 0;
 
+
         function type(){
 
             if(i >= text.length){
@@ -110,43 +121,82 @@ function typeText(element,text){
 
             }
 
+
             const char = text.charAt(i);
+
 
             element.textContent += char;
 
+
+            // Keep latest text visible
             element.scrollIntoView({
+
                 behavior:"smooth",
+
                 block:"end"
+
             });
 
-            let speed = 28;
 
-            if(char === ",")
-                speed = 140;
 
-            else if(char === ".")
-                speed = 300;
+            let speed = 45;
 
-            else if(char === "!")
-                speed = 350;
 
-            else if(char === "?")
-                speed = 350;
+            // Natural handwriting pauses
 
-            else if(char === "\n")
+            if(char === ","){
+
                 speed = 180;
 
+            }
+
+            else if(char === "."){
+
+                speed = 450;
+
+            }
+
+            else if(char === "!"){
+
+                speed = 500;
+
+            }
+
+            else if(char === "?"){
+
+                speed = 500;
+
+            }
+
+            else if(char === "\n"){
+
+                speed = 250;
+
+            }
+
+            // Longer pause after heart emoji
+
+            else if(char === "❤️"){
+
+                speed = 600;
+
+            }
+
+
             i++;
+
 
             setTimeout(type,speed);
 
         }
+
 
         type();
 
     });
 
 }
+
 
 /* ==========================================
    PAUSE
@@ -159,5 +209,28 @@ function pause(ms){
         setTimeout(resolve,ms);
 
     });
+
+}
+
+/* ==========================================
+   FINAL SIGNATURE REVEAL
+========================================== */
+
+function showFinalSignature(){
+
+    const signature = document.createElement("div");
+
+    signature.className = "signature";
+
+    signature.innerHTML =
+    `
+    With love ❤️
+    <br>
+    Rijin
+    `;
+
+
+    typewriter.appendChild(signature);
+
 
 }
