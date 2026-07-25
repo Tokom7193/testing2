@@ -2263,6 +2263,10 @@ body.leave{
 
 }
 
+/* ==========================================
+   LETTER INTRO
+========================================== */
+
 .letterIntro{
 
     position:relative;
@@ -2273,31 +2277,47 @@ body.leave{
 
     width:min(90%,700px);
 
-    animation:fadeInUp 1.2s ease;
+    animation:
+        fadeInUp 1.2s ease;
 
 }
+
+
+/* ==========================================
+   TITLE
+========================================== */
 
 .letterIntro h1{
 
     color:#fff;
 
-    font-size:clamp(34px,5vw,60px);
+    font-size:
+        clamp(34px,5vw,60px);
 
-    margin:0 0 20px;
+    margin:
+        0 0 20px;
 
     letter-spacing:2px;
 
     line-height:1.2;
 
-    animation:textGlow 5s ease-in-out infinite;
+    animation:
+        textGlow 5s ease-in-out infinite;
 
 }
 
+
+/* ==========================================
+   INTRO TEXT
+========================================== */
+
 .letterIntro p{
 
-    color:rgba(255,255,255,.85);
+    color:
+        rgba(255,255,255,.85);
 
-    font-size:clamp(18px,2vw,24px);
+    font-size:
+        clamp(18px,2vw,24px);
 
     line-height:1.7;
 
@@ -2305,24 +2325,33 @@ body.leave{
 
 }
 
+
+/* ==========================================
+   INTRO ENTRY ANIMATION
+========================================== */
+
 @keyframes fadeInUp{
 
     from{
 
         opacity:0;
-        transform:translateY(25px);
+
+        transform:
+            translateY(25px);
 
     }
+
 
     to{
 
         opacity:1;
-        transform:translateY(0);
+
+        transform:
+            translateY(0);
 
     }
 
 }
-
 /* ==========================================
    ENVELOPE
 ========================================== */
