@@ -2450,9 +2450,9 @@ body.leave{
 
 }
 
-/* ===========================
-   FLAP
-=========================== */
+/* ==========================================
+   ENVELOPE FLAP
+========================================== */
 
 .envelopeFlap{
 
@@ -2477,11 +2477,26 @@ body.leave{
 
     transform-origin:top;
 
-    z-index:6;
+    transform:rotateX(0deg);
 
     transition:
-        transform .9s ease,
+        transform .9s cubic-bezier(.22,.61,.36,1),
         opacity .5s ease;
+
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+
+    z-index:6;
+
+}
+
+/* ==========================================
+   OPEN ENVELOPE FLAP
+========================================== */
+
+.envelope.open .envelopeFlap{
+
+    transform:rotateX(180deg);
 
 }
 
