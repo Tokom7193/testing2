@@ -45,32 +45,37 @@ function openEnvelope(){
 
     if(!envelope || !background) return;
 
-    opened = true;
 
-   envelope.style.pointerEvents = "none";
+    opened = true;
 
 
     // Start envelope opening
     envelope.classList.add("open");
 
 
-    // Expand paper after flap opens
+
+    // Expand after flap animation
+
     setTimeout(()=>{
 
         envelope.classList.add("expanded");
 
         background.classList.add("focus");
 
+
     },1200);
 
 
 
-    // Start typing after paper settles
+    // Start typing after expansion settles
+
     setTimeout(()=>{
 
         typeParagraphs();
 
-    },2300);
+
+    },2500);
+
 
 }
 /* ==========================================
