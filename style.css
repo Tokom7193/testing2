@@ -3045,11 +3045,13 @@ body.leave{
 
     position:relative;
 
-    z-index:2;
+    z-index:5;
+
 
     width:100%;
 
     height:100%;
+
 
     box-sizing:border-box;
 
@@ -3086,10 +3088,34 @@ body.leave{
 
 
     transition:
-        opacity .7s ease;
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+
+    transform:
+        translateY(15px);
 
 
     -webkit-overflow-scrolling:touch;
+
+
+    overscroll-behavior:contain;
+
+}
+
+
+/* ===========================
+   SHOW LETTER CONTENT
+=========================== */
+
+.envelope.open .letterContent{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
 
 }
 
@@ -3124,26 +3150,37 @@ body.leave{
     scrollbar-width:thin;
 
 }
+
+
 /* ===========================
    HEADING
 =========================== */
 
 .letterContent h2{
 
-    margin:0 0 30px;
+    margin:
+
+        0 0 30px;
+
 
     text-align:center;
 
+
     color:#1b1b1b;
 
-    font-size:clamp(28px,4vw,40px);
+
+    font-size:
+
+        clamp(28px,4vw,40px);
+
 
     font-weight:normal;
 
+
     letter-spacing:1px;
 
-}
 
+}
 /* ===========================
    SHOW CONTENT
 =========================== */
