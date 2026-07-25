@@ -2831,3 +2831,51 @@ body.leave{
         0 0 120px rgba(0,255,255,.10);
 
 }
+
+/* ==========================================
+   TYPEWRITER
+========================================== */
+
+#typewriter{
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+    overflow-wrap:break-word;
+
+}
+
+.typingCursor{
+
+    display:inline-block;
+
+    width:3px;
+
+    height:1.2em;
+
+    margin-left:4px;
+
+    background:#333;
+
+    vertical-align:bottom;
+
+    animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+    0%,50%{
+
+        opacity:1;
+
+    }
+
+    51%,100%{
+
+        opacity:0;
+
+    }
+
+}
