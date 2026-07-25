@@ -2494,11 +2494,14 @@ body.leave{
     position:absolute;
 
     left:50%;
-    top:18%;
 
-    transform:translateX(-50%);
+    top:58%;
+
+    transform:
+        translate(-50%,0);
 
     width:82%;
+
     height:78%;
 
     background:#fff;
@@ -2513,29 +2516,36 @@ body.leave{
     z-index:2;
 
     transition:
+        transform .9s cubic-bezier(.22,.61,.36,1),
         width .9s ease,
         height .9s ease,
-        top .9s ease,
-        left .9s ease,
         border-radius .9s ease,
-        transform .9s ease;
+        box-shadow .9s ease;
 
 }
+
+
+/* ===========================
+   PAPER EXPANSION
+=========================== */
 
 .envelope.expanded .letterPaper{
 
-    left:0;
-    top:0;
+    transform:
+        translate(-50%,-42%)
+        scale(1.02);
 
-    width:100%;
-    height:100%;
+    width:92%;
 
-    transform:none;
+    height:90%;
 
-    border-radius:22px;
+    border-radius:18px;
+
+    box-shadow:
+
+        0 30px 70px rgba(0,0,0,.4);
 
 }
-
 /* ===========================
    SEAL
 =========================== */
