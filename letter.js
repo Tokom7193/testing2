@@ -150,8 +150,13 @@ function typeText(element,text){
 
 if(letterBox){
 
-    letterBox.scrollTop =
-        letterBox.scrollHeight;
+    letterBox.scrollTo({
+
+    top: letterBox.scrollHeight,
+
+    behavior:"smooth"
+
+});
 
 }
 
