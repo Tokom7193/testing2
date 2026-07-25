@@ -218,22 +218,33 @@ function pause(ms){
 
 function showFinalSignature(){
 
-    const signature = document.createElement("div");
+    setTimeout(()=>{
 
-    signature.className = "signature";
+        const signature = document.createElement("div");
 
-    signature.innerHTML =
-    `
-    With love ❤️
-    <br>
-    Rijin
-    `;
+        signature.className = "signature";
+
+        signature.innerHTML =
+        `
+        ❤️
+        <br><br>
+        With love,
+        <br>
+        Rijin
+        `;
 
 
-    typewriter.appendChild(signature);
+        typewriter.appendChild(signature);
 
+
+    },1200);
 
 }
+
+
+/* ==========================================
+   START LETTER STARS
+========================================== */
 
 createLetterStars();
 
