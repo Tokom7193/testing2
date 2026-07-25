@@ -3016,12 +3016,12 @@ body.leave{
 }
 
 /* ==========================================
-   PAPER LIFT OUT OF ENVELOPE
+   PAPER LIFT WHEN ENVELOPE OPENS
 ========================================== */
 
 .envelope.open .letterPaper{
 
-    top:18%;
+    top:10%;
 
 
     transform:
@@ -3032,26 +3032,21 @@ body.leave{
 
     transition:
 
-        top 1s cubic-bezier(.22,.61,.36,1),
+        top 1.2s cubic-bezier(.22,.61,.36,1),
 
-        transform 1s cubic-bezier(.22,.61,.36,1);
-
-}
-
-.envelope.open .letterPaper{
-
-    top:10%;
-
-    transform:
-        translate(-50%,0);
+        transform 1.2s cubic-bezier(.22,.61,.36,1);
 
 }
+
+
+
+/* Stop envelope floating during opening */
+
 .envelope.open{
 
     animation:none;
 
 }
-
 /* ==========================================
    LETTER PAPER CONTENT
 ========================================== */
