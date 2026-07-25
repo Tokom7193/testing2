@@ -3190,3 +3190,71 @@ body.leave{
     }
 
 }
+
+/* ==========================================
+   LETTER BACKGROUND STARS
+========================================== */
+
+
+.letterStars{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+
+.letterStars span{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+
+    opacity:.4;
+
+
+    box-shadow:
+
+        0 0 8px rgba(255,255,255,.8);
+
+
+    animation:
+        letterTwinkle ease-in-out infinite;
+
+}
+
+
+
+@keyframes letterTwinkle{
+
+
+    0%,100%{
+
+        opacity:.2;
+
+        transform:
+            scale(.7);
+
+    }
+
+
+    50%{
+
+        opacity:1;
+
+        transform:
+            scale(1.4);
+
+    }
+
+}
