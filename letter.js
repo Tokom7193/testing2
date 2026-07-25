@@ -33,8 +33,6 @@ That was exactly what I hoped for.`,
 
 ❤️`,
 
-`— Abhijith`
-
 ];
 
 /* ==========================================
