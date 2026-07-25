@@ -3641,7 +3641,9 @@ body.leave{
 }
 
 
-/* Letter glow */
+/* ==========================================
+   LETTER GLOW
+========================================== */
 
 .letterPage.endingMode .letterPaper{
 
@@ -3654,7 +3656,9 @@ body.leave{
 }
 
 
-/* Slow breathing glow */
+/* ==========================================
+   SLOW BREATHING GLOW
+========================================== */
 
 .letterPage.endingMode .letterContent{
 
