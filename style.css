@@ -2561,9 +2561,9 @@ body.leave{
         0 30px 70px rgba(0,0,0,.4);
 
 }
-/* ===========================
-   SEAL
-=========================== */
+/* ==========================================
+   ENVELOPE SEAL
+========================================== */
 
 .envelopeSeal{
 
@@ -2572,15 +2572,19 @@ body.leave{
     left:50%;
     top:49%;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
     width:52px;
+
     height:52px;
 
     border-radius:50%;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     background:rgba(255,255,255,.18);
@@ -2595,11 +2599,26 @@ body.leave{
     z-index:8;
 
     box-shadow:
-        0 0 18px rgba(255,255,255,.20);
+        0 0 18px rgba(255,255,255,.25);
 
     transition:
-        opacity .45s ease,
-        transform .45s ease;
+        opacity .5s ease,
+        transform .5s ease;
+
+}
+
+
+/* Seal disappears when opened */
+
+.envelope.open .envelopeSeal{
+
+    opacity:0;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.5);
+
+    pointer-events:none;
 
 }
 
