@@ -2821,23 +2821,26 @@ body.leave{
 
     inset:0;
 
+
     background:
         radial-gradient(
             rgba(0,0,0,.04) 1px,
             transparent 1px
         );
 
-    background-size:
-        4px 4px;
 
-    opacity:.25;
+    background-size:4px 4px;
+
+
+    opacity:.18;
+
 
     pointer-events:none;
 
-    z-index:1;
+
+    z-index:0;
 
 }
-
 /* ==========================================
    ENVELOPE SEAL
 ========================================== */
@@ -3047,7 +3050,7 @@ body.leave{
     opacity:0;
 
 
-    color:#2b2b2b;
+    color:#111111;
 
 
     font-family:
@@ -3138,26 +3141,28 @@ body.leave{
 .letterContent h2{
 
     margin:
-
         0 0 30px;
 
 
     text-align:center;
 
 
-    color:#1b1b1b;
+    color:#000;
 
 
     font-size:
-
         clamp(28px,4vw,40px);
 
 
-    font-weight:normal;
+    font-weight:600;
 
 
     letter-spacing:1px;
 
+
+    position:relative;
+
+    z-index:5;
 
 }
 /* ===========================
