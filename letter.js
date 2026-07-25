@@ -58,12 +58,12 @@ function openEnvelope(){
 
     setTimeout(()=>{
 
-        envelope.classList.add("expanded");
+    envelope.classList.add("expanded");
 
-        background.classList.add("focus");
+    background.classList.add("focus");
 
 
-    },1200);
+},1800);
 
 
 
@@ -74,7 +74,7 @@ function openEnvelope(){
         typeParagraphs();
 
 
-    },2500);
+    },2300);
 
 
 }
