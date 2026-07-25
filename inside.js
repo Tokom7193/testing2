@@ -649,3 +649,11 @@ function closeCard(){
     }
 
 }
+
+function showEnding(){
+
+    const screen = document.getElementById("endingScreen");
+
+    screen.classList.add("show");
+
+}
