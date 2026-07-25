@@ -674,7 +674,7 @@ button:active{
 
     color:white;
 
-    font-size:18px;
+    font-size:clamp(14px,2vw,18px);
 
     cursor:pointer;
 
@@ -1768,7 +1768,7 @@ body.leave{
 
     transform:translateX(-50%) translateY(-30px);
 
-    width:min(90%,420px);
+    width:min(92vw,500px);
 
     padding:25px;
 
@@ -1776,47 +1776,36 @@ body.leave{
 
     color:white;
 
-    font-size:18px;
+    font-size:clamp(14px,1.8vw,18px);
 
     font-weight:600;
 
     line-height:1.5;
-
 
     background:rgba(255,255,255,.14);
 
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
 
-
     border:1px solid rgba(255,255,255,.35);
 
     border-radius:25px;
 
-
     box-shadow:
-
-    0 0 25px cyan,
-
-    inset 0 0 25px rgba(255,255,255,.2);
-
+        0 0 25px cyan,
+        inset 0 0 25px rgba(255,255,255,.2);
 
     z-index:2000;
-
 
     opacity:0;
 
     pointer-events:none;
 
-
     transition:
-
-    opacity .5s ease,
-
-    transform .5s ease;
+        opacity .5s ease,
+        transform .5s ease;
 
 }
-
 
 .glassAlert.show{
 
