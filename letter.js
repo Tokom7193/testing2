@@ -220,28 +220,38 @@ function showFinalSignature(){
 
     setTimeout(()=>{
 
-        const signature = document.createElement("div");
 
-        signature.className = "signature";
-
-        signature.innerHTML =
-        `
-        ❤️
-        <br><br>
-        With love,
-        <br>
-        Rijin
-        `;
+        const signature =
+            document.getElementById("signature");
 
 
-        typewriter.appendChild(signature);
+        if(signature){
+
+            signature.classList.add("show");
+
+        }
+
+
+        setTimeout(()=>{
+
+
+            const finalMessage =
+                document.getElementById("finalMessage");
+
+
+            if(finalMessage){
+
+                finalMessage.classList.add("show");
+
+            }
+
+
+        },2500);
 
 
     },1200);
 
 }
-
-
 /* ==========================================
    START LETTER STARS
 ========================================== */
