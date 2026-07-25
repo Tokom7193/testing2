@@ -45,8 +45,12 @@ function openEnvelope(){
 
     opened = true;
 
+
+    // Start envelope opening
     envelope.classList.add("open");
 
+
+    // Expand paper after flap opens
     setTimeout(()=>{
 
         envelope.classList.add("expanded");
@@ -55,10 +59,16 @@ function openEnvelope(){
 
     },1200);
 
-    setTimeout(typeParagraphs,1800);
+
+
+    // Start typing after paper settles
+    setTimeout(()=>{
+
+        typeParagraphs();
+
+    },2300);
 
 }
-
 /* ==========================================
    TYPE PARAGRAPHS
 ========================================== */
