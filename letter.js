@@ -131,13 +131,16 @@ function typeText(element,text){
 
 
             // Keep latest text visible
-            element.scrollIntoView({
+            const letterBox =
+    document.querySelector(".letterContent");
 
-                behavior:"smooth",
 
-                block:"end"
+if(letterBox){
 
-            });
+    letterBox.scrollTop =
+        letterBox.scrollHeight;
+
+}
 
 
 
