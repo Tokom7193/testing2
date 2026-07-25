@@ -258,8 +258,59 @@ function showFinalSignature(){
 
 }
 /* ==========================================
-   START LETTER STARS
+   LETTER PAGE STAR GENERATOR
 ========================================== */
+
+const letterStars = document.querySelector(".letterStars");
+
+
+function createLetterStars(){
+
+    if(!letterStars) return;
+
+
+    letterStars.innerHTML = "";
+
+
+    for(let i = 0; i < 80; i++){
+
+        const star = document.createElement("span");
+
+
+        const size =
+            Math.random() * 3 + 1;
+
+
+        star.style.width =
+            size + "px";
+
+
+        star.style.height =
+            size + "px";
+
+
+        star.style.left =
+            Math.random() * 100 + "%";
+
+
+        star.style.top =
+            Math.random() * 100 + "%";
+
+
+        star.style.animationDuration =
+            (3 + Math.random() * 5) + "s";
+
+
+        star.style.animationDelay =
+            Math.random() * 5 + "s";
+
+
+        letterStars.appendChild(star);
+
+    }
+
+}
+
 
 createLetterStars();
 
