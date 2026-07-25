@@ -1835,3 +1835,64 @@ body.leave{
     font-weight:600;
 
 }
+/* ===========================
+   FINAL TRANSITION SCREEN
+=========================== */
+
+.endingScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:5000;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:opacity 1s ease;
+
+}
+
+.endingScreen.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.endingText{
+
+    color:white;
+
+    font-size:clamp(28px,5vw,56px);
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:all 1s ease;
+
+}
+
+.endingScreen.show .endingText{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
