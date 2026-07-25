@@ -235,46 +235,47 @@ function pause(ms){
 
 }
 
-/* ==========================================
-   FINAL SIGNATURE REVEAL
-========================================== */
+ /* ==========================================
+    FINAL SIGNATURE REVEAL
+ ========================================== */
 
 function showFinalSignature(){
+
+
+    const signature =
+        document.getElementById("signature");
+
+
+    if(signature){
+
+
+        // Reveal signature only after letter is finished
+
+        signature.classList.add("show");
+
+
+    }
+
+
 
     setTimeout(()=>{
 
 
-        const signature =
-            document.getElementById("signature");
+        const finalMessage =
+            document.getElementById("finalMessage");
 
 
-        if(signature){
+        if(finalMessage){
 
-            
-           
-            signature.classList.add("show");
+
+            finalMessage.classList.add("show");
+
 
         }
 
 
-        setTimeout(()=>{
+    },2500);
 
-
-            const finalMessage =
-                document.getElementById("finalMessage");
-
-
-            if(finalMessage){
-
-                finalMessage.classList.add("show");
-
-            }
-
-
-        },2500);
-
-
-    },1200);
 
 }
 /* ==========================================
