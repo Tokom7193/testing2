@@ -2707,6 +2707,10 @@ body.leave{
    LETTER PAPER
 =========================== */
 
+/* ==========================================
+   LETTER PAPER
+========================================== */
+
 .letterPaper{
 
     position:absolute;
@@ -2717,7 +2721,8 @@ body.leave{
 
 
     transform:
-        translate(-50%,0);
+        translate(-50%,0)
+        scale(.96);
 
 
     width:82%;
@@ -2751,9 +2756,9 @@ body.leave{
 
     transition:
 
-        top .9s ease,
-
         transform .9s cubic-bezier(.22,.61,.36,1),
+
+        top .9s cubic-bezier(.22,.61,.36,1),
 
         width .9s ease,
 
@@ -2765,8 +2770,9 @@ body.leave{
 
 }
 
+
 /* ==========================================
-   EXPANDED LETTER PAPER POSITION
+   EXPANDED LETTER PAPER
 ========================================== */
 
 .envelope.expanded .letterPaper{
@@ -2782,7 +2788,8 @@ body.leave{
 
 
     transform:
-        translate(-50%,-50%);
+        translate(-50%,-50%)
+        scale(1);
 
 
     border-radius:22px;
@@ -2793,6 +2800,7 @@ body.leave{
         0 25px 70px rgba(0,0,0,.45);
 
 }
+
 
 /* ===========================
    MOBILE ADJUSTMENT
@@ -2809,6 +2817,8 @@ body.leave{
     }
 
 }
+
+
 /* ===========================
    PAPER TEXTURE
 =========================== */
@@ -2823,6 +2833,7 @@ body.leave{
 
 
     background:
+
         radial-gradient(
             rgba(0,0,0,.04) 1px,
             transparent 1px
@@ -2996,11 +3007,12 @@ body.leave{
 
 .envelope.open .letterPaper{
 
+    top:10%;
+
     transform:
-        translate(-50%,-55px);
+        translate(-50%,0);
 
 }
-
 .envelope.open{
 
     animation:none;
