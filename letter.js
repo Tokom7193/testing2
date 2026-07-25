@@ -240,10 +240,7 @@ function showFinalSignature(){
 
         if(signature){
 
-            document
-                .body
-                .classList
-                .add("endingMode");
+            
            
             signature.classList.add("show");
 
