@@ -579,25 +579,9 @@ function openCard(name){
 
     });
 
-    // ⭐ Show Final Surprise after all 8 are opened
-if (openedQualities.size === 8) {
+   if (openedQualities.size === 8) {
 
-    const alertBox = document.getElementById("glassAlert");
-
-    alertBox.classList.add("show");
-
-
-    setTimeout(()=>{
-
-        alertBox.classList.remove("show");
-
-
-        document
-            .getElementById("finalUnlock")
-            .classList.add("show");
-
-
-    },2000);
+    allOpened = true;
 
 }
 
@@ -639,5 +623,29 @@ function closeCard(){
 
     document.getElementById("overlay")
         .classList.remove("show");
+
+    if(allOpened){
+
+        allOpened = false;
+
+        setTimeout(() => {
+
+            const alertBox = document.getElementById("glassAlert");
+
+            alertBox.classList.add("show");
+
+            setTimeout(() => {
+
+                alertBox.classList.remove("show");
+
+                document
+                    .getElementById("finalUnlock")
+                    .classList.add("show");
+
+            }, 2000);
+
+        }, 1000);
+
+    }
 
 }
