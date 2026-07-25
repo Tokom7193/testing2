@@ -2467,6 +2467,7 @@ body.leave{
 
 }
 
+
 /* ===========================
    EXPANDED STATE
 =========================== */
@@ -2478,7 +2479,8 @@ body.leave{
     left:50%;
     top:50%;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
     width:min(92vw,760px);
 
@@ -2494,6 +2496,7 @@ body.leave{
 
 }
 
+
 /* ===========================
    BACK
 =========================== */
@@ -2501,22 +2504,34 @@ body.leave{
 .envelopeBack{
 
     position:absolute;
+
     inset:0;
 
     border-radius:18px;
 
-    background:rgba(255,255,255,.08);
+    background:
+        rgba(255,255,255,.08);
 
     backdrop-filter:blur(18px);
+
     -webkit-backdrop-filter:blur(18px);
 
-    border:1px solid rgba(255,255,255,.18);
+    border:
+        1px solid rgba(255,255,255,.18);
+
 
     box-shadow:
+
         0 15px 35px rgba(0,0,0,.35),
+
         0 0 30px rgba(0,255,255,.08);
 
+    transition:
+
+        border-radius .8s ease;
+
 }
+
 
 /* ===========================
    FRONT
@@ -2527,29 +2542,60 @@ body.leave{
     position:absolute;
 
     left:0;
+
     bottom:0;
 
     width:100%;
+
     height:55%;
 
-    background:rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.12);
+
 
     backdrop-filter:blur(14px);
+
     -webkit-backdrop-filter:blur(14px);
 
-    border:1px solid rgba(255,255,255,.15);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
 
     clip-path:polygon(
+
         0 0,
+
         50% 75%,
+
         100% 0,
+
         100% 100%,
+
         0 100%
+
     );
 
-    transition:opacity .5s ease;
+
+    opacity:1;
+
+
+    transition:
+
+        opacity .5s ease;
 
 }
+
+
+/* Fade front while opening */
+
+.envelope.open .envelopeFront{
+
+    opacity:.25;
+
+}
+
 
 /* ==========================================
    ENVELOPE FLAP
@@ -2560,46 +2606,96 @@ body.leave{
     position:absolute;
 
     top:0;
+
     left:0;
 
     width:100%;
+
     height:55%;
 
-    background:rgba(255,255,255,.10);
+
+    background:
+
+        rgba(255,255,255,.10);
+
 
     backdrop-filter:blur(14px);
+
     -webkit-backdrop-filter:blur(14px);
 
+
     clip-path:polygon(
+
         0 0,
+
         50% 100%,
+
         100% 0
+
     );
+
 
     transform-origin:top;
 
-    transform:rotateX(0deg);
+
+    transform:
+        rotateX(0deg);
+
 
     transition:
+
         transform .9s cubic-bezier(.22,.61,.36,1),
+
         opacity .5s ease;
 
+
     backface-visibility:hidden;
+
     -webkit-backface-visibility:hidden;
+
 
     z-index:6;
 
 }
 
-/* ==========================================
-   OPEN ENVELOPE FLAP
-========================================== */
+
+/* Open flap */
 
 .envelope.open .envelopeFlap{
 
-    transform:rotateX(180deg);
+    transform:
+        rotateX(180deg);
 
 }
+
+
+/* ===========================
+   SEAL
+=========================== */
+
+.envelopeSeal{
+
+    transition:
+
+        opacity .4s ease,
+
+        transform .4s ease;
+
+}
+
+
+.envelope.open .envelopeSeal{
+
+    opacity:0;
+
+    transform:
+
+        translate(-50%,-50%)
+
+        scale(.8);
+
+}
+
 
 /* ===========================
    LETTER PAPER
@@ -2609,43 +2705,81 @@ body.leave{
 
     position:absolute;
 
+
     left:50%;
 
     top:58%;
 
+
     transform:
+
         translate(-50%,0);
+
 
     width:82%;
 
     height:78%;
 
+
     background:
-    linear-gradient(
-        135deg,
-        #ffffff,
-        #f8f4ed
-    );
+
+        linear-gradient(
+
+            135deg,
+
+            #ffffff,
+
+            #f8f4ed
+
+        );
+
 
     border-radius:12px;
 
+
     box-shadow:
-    0 25px 60px rgba(0,0,0,.35),
-    inset 0 0 40px rgba(0,0,0,.04);
+
+        0 25px 60px rgba(0,0,0,.35),
+
+        inset 0 0 40px rgba(0,0,0,.04);
+
 
     overflow:hidden;
 
+
     z-index:2;
 
+
     transition:
+
         transform .9s cubic-bezier(.22,.61,.36,1),
+
         width .9s ease,
+
         height .9s ease,
+
         border-radius .9s ease,
+
         box-shadow .9s ease;
 
 }
 
+
+/* ===========================
+   MOBILE ADJUSTMENT
+=========================== */
+
+@media(max-width:600px){
+
+    .envelope.expanded{
+
+        width:94vw;
+
+        height:90dvh;
+
+    }
+
+}
 /* ===========================
    PAPER TEXTURE
 =========================== */
