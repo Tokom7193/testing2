@@ -50,21 +50,22 @@
 
             <div class="envelope"
                  id="envelope"
+                 role="button"
+                 aria-label="Open letter envelope"
                  onclick="openEnvelope()">
 
 
 
+                <!-- Back of envelope -->
                 <div class="envelopeBack"></div>
 
 
 
-                <!-- Letter Paper -->
-
+                <!-- Letter -->
                 <div class="letterPaper">
 
 
                     <div class="letterContent">
-
 
 
                         <h2>
@@ -81,11 +82,10 @@
 
 
                             <div id="cursor"
-                                 class="typingCursor"></div>
+                                 class="typingCursor">
+                            </div>
 
 
-
-                            <!-- Signature -->
 
                             <div id="signature"
                                  class="signature">
@@ -98,21 +98,16 @@
 
 
 
-                            <!-- Final Message -->
-
                             <div id="finalMessage"
                                  class="finalMessage">
-
 
                                 <h2>
                                     Thank you for being you ❤️
                                 </h2>
 
-
                                 <p>
                                     Never change.
                                 </p>
-
 
                             </div>
 
@@ -128,20 +123,19 @@
 
 
 
-
-                <!-- Envelope Parts -->
-
+                <!-- Envelope flap -->
                 <div class="envelopeFlap"></div>
 
 
+
+                <!-- Envelope front -->
                 <div class="envelopeFront"></div>
 
 
 
+                <!-- Seal -->
                 <div class="envelopeSeal">
-
                     ❤️
-
                 </div>
 
 
