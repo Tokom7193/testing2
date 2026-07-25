@@ -79,6 +79,8 @@ function openEnvelope(){
 
 async function typeParagraphs(){
 
+    if(!typewriter) return;
+
     for(const paragraph of letterParts){
 
         const p = document.createElement("p");
@@ -96,7 +98,11 @@ async function typeParagraphs(){
 
 
     // Hide cursor after finishing
+    if(cursor){
+
     cursor.style.display = "none";
+
+}
 
 
     // Optional final reveal
