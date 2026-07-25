@@ -671,3 +671,44 @@ function createStarLayer(selector, count, minSize, maxSize) {
 createStarLayer(".starsFar", 80, 1, 2);
 createStarLayer(".starsMid", 60, 2, 3);
 createStarLayer(".starsNear", 40, 3, 4);
+
+// ===========================
+// SHOOTING STAR GENERATOR
+// ===========================
+
+const shootingStarsLayer = document.querySelector(".shootingStars");
+
+function createShootingStar() {
+
+    if (!shootingStarsLayer) return;
+
+    const star = document.createElement("span");
+    star.className = "shootingStar";
+
+    const startTop = Math.random() * 40 + 5;   // 5% to 45%
+    const startLeft = Math.random() * 80 + 10;  // 10% to 90%
+
+    star.style.top = startTop + "%";
+    star.style.left = startLeft + "%";
+
+    const duration = 1.2 + Math.random() * 0.8;
+    star.style.animation = `shooting ${duration}s linear forwards`;
+
+    shootingStarsLayer.appendChild(star);
+
+    setTimeout(() => {
+        star.remove();
+    }, duration * 1000 + 100);
+}
+
+function scheduleShootingStar() {
+
+    const delay = 15000 + Math.random() * 15000; // 15–30 sec
+
+    setTimeout(() => {
+        createShootingStar();
+        scheduleShootingStar();
+    }, delay);
+}
+
+scheduleShootingStar();
