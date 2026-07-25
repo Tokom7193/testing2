@@ -86,36 +86,52 @@ async function typeParagraphs(){
 
     if(!typewriter) return;
 
+
     for(const paragraph of letterParts){
+
 
         const p = document.createElement("p");
 
+
         typewriter.appendChild(p);
+
 
 
         await typeText(p, paragraph);
 
 
+
         // Natural pause between thoughts
+
         await pause(1200);
+
 
     }
 
 
-    // Hide cursor after finishing
+
+    // Hide typing cursor
+
     if(cursor){
 
-    cursor.style.display = "none";
+        cursor.style.display = "none";
 
-}
+    }
 
 
-    // Optional final reveal
+
+    // Small emotional pause before signature
+
+    await pause(1500);
+
+
+
+    // Reveal signature only after complete letter
+
     showFinalSignature();
 
+
 }
-
-
 /* ==========================================
    TYPE TEXT
 ========================================== */
