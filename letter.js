@@ -43,6 +43,8 @@ function openEnvelope(){
 
     if(opened) return;
 
+    if(!envelope || !background) return;
+
     opened = true;
 
 
