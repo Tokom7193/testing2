@@ -2322,3 +2322,190 @@ body.leave{
     }
 
 }
+
+/* ==========================================
+   ENVELOPE
+========================================== */
+
+.envelopeContainer{
+
+    margin-top:50px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+
+}
+
+.envelope{
+
+    position:relative;
+
+    width:min(320px,85vw);
+    aspect-ratio:1.45/1;
+
+    cursor:pointer;
+
+    animation:floatEnvelope 4s ease-in-out infinite;
+
+    transition:transform .4s ease;
+
+    user-select:none;
+    -webkit-user-select:none;
+
+}
+
+.envelope:hover{
+
+    transform:scale(1.03);
+
+}
+
+.envelopeBack{
+
+    position:absolute;
+    inset:0;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35),
+        0 0 30px rgba(0,255,255,.08);
+
+}
+
+.envelopeFront{
+
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:55%;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    clip-path:polygon(
+        0 0,
+        50% 75%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+}
+
+.envelopeFlap{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:55%;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    clip-path:polygon(
+        0 0,
+        50% 100%,
+        100% 0
+    );
+
+    transform-origin:top;
+
+    z-index:6;
+
+}
+
+.letterPaper{
+
+    position:absolute;
+
+    left:50%;
+    top:18%;
+
+    transform:translateX(-50%);
+
+    width:82%;
+    height:78%;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.25);
+
+    z-index:2;
+
+}
+
+.envelopeSeal{
+
+    position:absolute;
+
+    left:50%;
+    top:49%;
+
+    transform:translate(-50%,-50%);
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.22);
+
+    font-size:24px;
+
+    z-index:8;
+
+    box-shadow:
+        0 0 18px rgba(255,255,255,.2);
+
+}
+
+@keyframes floatEnvelope{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
