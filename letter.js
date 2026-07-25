@@ -236,3 +236,56 @@ function showFinalSignature(){
 }
 
 createLetterStars();
+
+// ==========================================
+// FLOATING PARTICLES
+// ==========================================
+
+function createParticles(){
+
+    if(!letterStars) return;
+
+
+    for(let i = 0; i < 25; i++){
+
+        const particle = document.createElement("span");
+
+        particle.className = "particle";
+
+
+        const size =
+            Math.random() * 4 + 2;
+
+
+        particle.style.width =
+            size + "px";
+
+
+        particle.style.height =
+            size + "px";
+
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+
+        particle.style.top =
+            Math.random() * 100 + "%";
+
+
+        particle.style.animationDuration =
+            (8 + Math.random() * 8) + "s";
+
+
+        particle.style.animationDelay =
+            Math.random() * 5 + "s";
+
+
+        letterStars.appendChild(particle);
+
+    }
+
+}
+
+
+createParticles();
