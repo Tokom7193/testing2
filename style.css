@@ -3239,17 +3239,59 @@ body.leave{
 
 }
 
-/* ==========================================
-   TYPEWRITER
+ /* ==========================================
+    TYPEWRITER
 ========================================== */
 
 #typewriter{
+
+    width:100%;
 
     white-space:pre-wrap;
 
     word-break:break-word;
 
-    overflow-wrap:break-word;
+    overflow-wrap:anywhere;
+
+}
+
+
+/* ==========================================
+   TYPEWRITER PARAGRAPHS
+========================================== */
+
+#typewriter p{
+
+    margin:
+
+        0 0 28px;
+
+
+    white-space:pre-wrap;
+
+
+    word-break:break-word;
+
+
+    overflow-wrap:anywhere;
+
+}
+
+
+/* First paragraph */
+
+#typewriter p:first-child{
+
+    margin-top:0;
+
+}
+
+
+/* Last paragraph */
+
+#typewriter p:last-child{
+
+    margin-bottom:10px;
 
 }
 
@@ -3262,27 +3304,38 @@ body.leave{
 
     display:inline-block;
 
+
     width:3px;
+
 
     height:1.2em;
 
+
     margin-left:5px;
+
 
     background:#2b2b2b;
 
+
     vertical-align:middle;
+
 
     border-radius:2px;
 
+
     animation:
+
         cursorBlink .8s infinite;
 
 }
 
 
-/* Cursor glow on dark screens */
+/* ==========================================
+   CURSOR ANIMATION
+========================================== */
 
 @keyframes cursorBlink{
+
 
     0%,100%{
 
@@ -3290,9 +3343,36 @@ body.leave{
 
     }
 
+
     50%{
 
         opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE OPTIMIZATION
+========================================== */
+
+@media(max-width:600px){
+
+    #typewriter p{
+
+        margin-bottom:22px;
+
+        line-height:1.8;
+
+    }
+
+
+    .typingCursor{
+
+        height:1.1em;
+
+        width:2px;
 
     }
 
