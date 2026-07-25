@@ -656,4 +656,10 @@ function showEnding(){
 
     screen.classList.add("show");
 
+    setTimeout(() => {
+
+        window.location.href = "letter.html";
+
+    }, 3500);
+
 }
