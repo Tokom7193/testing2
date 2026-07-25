@@ -2975,6 +2975,11 @@ body.leave{
 
 }
 
+
+/* ==========================================
+   TYPING CURSOR
+========================================== */
+
 .typingCursor{
 
     display:inline-block;
@@ -2983,27 +2988,52 @@ body.leave{
 
     height:1.2em;
 
-    margin-left:4px;
+    margin-left:5px;
 
-    background:#333;
+    background:#2b2b2b;
 
-    vertical-align:bottom;
+    vertical-align:middle;
 
-    animation:blink .8s infinite;
+    border-radius:2px;
+
+    animation:
+        cursorBlink .8s infinite;
 
 }
 
-@keyframes blink{
 
-    0%,50%{
+/* Cursor glow on dark screens */
+
+@keyframes cursorBlink{
+
+    0%,100%{
 
         opacity:1;
 
     }
 
-    51%,100%{
+    50%{
 
         opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE OPTIMIZATION
+========================================== */
+
+@media(max-width:600px){
+
+    .typingCursor{
+
+        width:2px;
+
+        height:1.1em;
+
+        margin-left:4px;
 
     }
 
