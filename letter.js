@@ -1,21 +1,22 @@
 const envelope = document.getElementById("envelope");
 const typewriter = document.getElementById("typewriter");
+const cursor = document.getElementById("cursor");
 
 let opened = false;
 
-const letterText = `
+const letterText = `Dear SUAR,
 
-This is where your letter will appear.
+This is where your real letter will be.
 
-We'll make it type one character at a time,
-just like someone carefully writing to her.
+Every sentence will appear naturally,
+as if someone is writing it just for you.
 
-Every paragraph can pause naturally.
+I wanted this experience to feel personal,
+not like reading a normal webpage.
 
-This makes the ending feel much more emotional.
+Thank you for reaching this far.
 
 ❤️
-
 `;
 
 function openEnvelope(){
@@ -26,7 +27,13 @@ function openEnvelope(){
 
     envelope.classList.add("open");
 
-    setTimeout(startTyping, 1200);
+    setTimeout(()=>{
+
+        envelope.classList.add("expanded");
+
+    },1200);
+
+    setTimeout(startTyping,1800);
 
 }
 
@@ -36,13 +43,37 @@ function startTyping(){
 
     function type(){
 
-        if(i >= letterText.length) return;
+        if(i >= letterText.length){
 
-        typewriter.innerHTML += letterText.charAt(i);
+            cursor.style.display="none";
+            return;
+
+        }
+
+        typewriter.textContent += letterText.charAt(i);
+
+        typewriter.parentElement.scrollTop =
+            typewriter.parentElement.scrollHeight;
+
+        const ch = letterText.charAt(i);
 
         i++;
 
-        setTimeout(type, 35);
+        let speed = 28;
+
+        if(ch === ",")
+
+            speed = 180;
+
+        else if(ch === ".")
+
+            speed = 350;
+
+        else if(ch === "\n")
+
+            speed = 220;
+
+        setTimeout(type,speed);
 
     }
 
