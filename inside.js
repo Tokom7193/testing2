@@ -554,7 +554,7 @@ Especially old people ke liye jo respect tum dikhati ho, woh mujhe bahut achha l
 
 };
 
-function openCard(name){
+function openCard(name) {
 
     openedQualities.add(name);
 
@@ -570,61 +570,40 @@ function openCard(name){
     };
 
     objects.forEach(obj => {
-
         if (obj.el.id === bubbleMap[name]) {
-
             obj.opened = true;
-
         }
-
     });
 
-   if (openedQualities.size === 8) {
+    if (openedQualities.size === 8) {
+        allOpened = true;
+    }
 
-    allOpened = true;
+    console.log(openedQualities.size);
 
-}
+    const data = qualities[name];
 
-    
-   console.log(openedQualities.size);
+    console.log(data.image);
 
-   const data = qualities[name];
-
-   console.log(data.image);
-
-    document.getElementById("popupEmoji").textContent =
-        data.emoji;
-
-    document.getElementById("popupTitle").textContent =
-        data.title;
-
-    document.getElementById("popupText").innerHTML =
-    qualities[name].text;
-
-    document.getElementById("popupAction").textContent =
-        data.action;
-
+    document.getElementById("popupEmoji").textContent = data.emoji;
+    document.getElementById("popupTitle").textContent = data.title;
+    document.getElementById("popupText").innerHTML = qualities[name].text;
+    document.getElementById("popupAction").textContent = data.action;
 
     const imageBox = document.querySelector(".popupImage");
 
-if(imageBox){
+    if (imageBox) {
+        imageBox.style.backgroundImage = `url(${data.image}?v=${Date.now()})`;
+    }
 
-    imageBox.style.backgroundImage = 
-    `url(${data.image}?v=${Date.now()})`;
-
+    document.getElementById("overlay").classList.add("show");
 }
 
+function closeCard() {
 
-    document.getElementById("overlay")
-        .classList.add("show");
+    document.getElementById("overlay").classList.remove("show");
 
-}
-function closeCard(){
-
-    document.getElementById("overlay")
-        .classList.remove("show");
-
-    if(allOpened){
+    if (allOpened) {
 
         allOpened = false;
 
@@ -638,9 +617,7 @@ function closeCard(){
 
                 alertBox.classList.remove("show");
 
-                document
-                    .getElementById("finalUnlock")
-                    .classList.add("show");
+                document.getElementById("finalUnlock").classList.add("show");
 
             }, 2000);
 
@@ -650,57 +627,47 @@ function closeCard(){
 
 }
 
-function showEnding(){
+function showEnding() {
 
     const screen = document.getElementById("endingScreen");
 
     screen.classList.add("show");
 
     setTimeout(() => {
-
         window.location.href = "letter.html";
-
     }, 3500);
 
 }
+
+
 // ===========================
-// ENDING STARS GENERATOR
+// CREATE STAR LAYERS
 // ===========================
 
-const endingStars = document.querySelector(".endingStars");
+function createStarLayer(selector, count, minSize, maxSize) {
 
-if(endingStars){
+    const layer = document.querySelector(selector);
+    if (!layer) return;
 
-    for(let i = 0; i < 80; i++){
+    layer.innerHTML = "";
+
+    for (let i = 0; i < count; i++) {
 
         const star = document.createElement("span");
-
-        star.style.left = Math.random() * 100 + "%";
-
-        star.style.top = Math.random() * 100 + "%";
-
-
-        const size = Math.random() * 3 + 1;
+        const size = Math.random() * (maxSize - minSize) + minSize;
 
         star.style.width = size + "px";
-
         star.style.height = size + "px";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.top = Math.random() * 100 + "%";
+        star.style.animationDuration = (3 + Math.random() * 4) + "s";
+        star.style.animationDelay = (Math.random() * 5) + "s";
 
-
-        star.style.opacity =
-            0.2 + Math.random() * 0.8;
-
-
-        star.style.animationDelay =
-            Math.random() * 4 + "s";
-
-
-        star.style.animationDuration =
-            2 + Math.random() * 4 + "s";
-
-
-        endingStars.appendChild(star);
-
+        layer.appendChild(star);
     }
 
 }
+
+createStarLayer(".starsFar", 80, 1, 2);
+createStarLayer(".starsMid", 60, 2, 3);
+createStarLayer(".starsNear", 40, 3, 4);
