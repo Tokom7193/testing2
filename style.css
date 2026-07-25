@@ -3193,6 +3193,7 @@ body.leave{
 .letterContent h2{
 
     margin:
+
         0 0 35px;
 
 
@@ -3203,12 +3204,14 @@ body.leave{
 
 
     font-family:
+
         Georgia,
         "Times New Roman",
         serif;
 
 
     font-size:
+
         clamp(28px,4vw,40px);
 
 
@@ -3218,12 +3221,29 @@ body.leave{
     letter-spacing:1px;
 
 
-    position:relative;
+    position:sticky;
 
 
-    z-index:5;
+    top:0;
+
+
+    z-index:10;
+
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #f8f4ed 80%,
+            transparent
+        );
+
+
+    padding-bottom:15px;
 
 }
+
+
 /* ===========================
    SHOW CONTENT
 =========================== */
@@ -3235,7 +3255,6 @@ body.leave{
     transition-delay:.4s;
 
 }
-
 /* ===========================
    PAPER TEXTURE
 =========================== */
