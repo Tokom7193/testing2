@@ -2339,33 +2339,54 @@ body.leave{
 
 }
 
+
 .envelope{
 
     position:relative;
 
     width:min(320px,85vw);
+
     aspect-ratio:1.45/1;
 
     cursor:pointer;
 
-    animation:floatEnvelope 4s ease-in-out infinite;
+    animation:
+        floatEnvelope 4s ease-in-out infinite;
 
     transition:
-        all .9s ease;
+        transform .6s ease;
 
     user-select:none;
+
     -webkit-user-select:none;
+
+    touch-action:manipulation;
 
     z-index:10;
 
 }
 
-.envelope:hover{
 
-    transform:scale(1.03);
+/* Desktop hover only */
+
+@media (hover:hover){
+
+    .envelope:hover{
+
+        transform:scale(1.03);
+
+    }
 
 }
 
+
+/* Stop floating during opening */
+
+.envelope.open{
+
+    animation:none;
+
+}
 /* ===========================
    EXPANDED STATE
 =========================== */
