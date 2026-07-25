@@ -3183,13 +3183,19 @@ body.leave{
 .letterContent h2{
 
     margin:
-        0 0 30px;
+        0 0 35px;
 
 
-    text-align:center;
+    text-align:left;
 
 
-    color:#000;
+    color:#5a2a1f;
+
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
 
     font-size:
@@ -3203,6 +3209,7 @@ body.leave{
 
 
     position:relative;
+
 
     z-index:5;
 
