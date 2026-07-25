@@ -3079,13 +3079,14 @@ body.leave{
 
 
     padding:
-        clamp(24px,5vw,60px);
+        clamp(28px,5vw,60px);
 
 
-    overflow-y:scroll;
+    padding-bottom:160px;
 
-    padding-bottom:120px;
-    
+
+    overflow-y:auto;
+
     overflow-x:hidden;
 
 
@@ -3108,6 +3109,9 @@ body.leave{
     line-height:1.9;
 
 
+    text-align:left;
+
+
     scroll-behavior:smooth;
 
 
@@ -3119,6 +3123,7 @@ body.leave{
 
 
     transform:
+
         translateY(15px);
 
 
@@ -3130,6 +3135,7 @@ body.leave{
 }
 
 
+
 /* ===========================
    SHOW LETTER CONTENT
 =========================== */
@@ -3138,10 +3144,13 @@ body.leave{
 
     opacity:1;
 
+
     transform:
+
         translateY(0);
 
 }
+
 
 
 /* ===========================
@@ -3158,11 +3167,14 @@ body.leave{
 .letterContent::-webkit-scrollbar-thumb{
 
     background:
-        rgba(0,0,0,.18);
+
+        rgba(90,42,31,.25);
+
 
     border-radius:20px;
 
 }
+
 
 
 /* ===========================
@@ -3174,8 +3186,6 @@ body.leave{
     scrollbar-width:thin;
 
 }
-
-
 /* ===========================
    HEADING
 =========================== */
