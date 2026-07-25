@@ -1814,3 +1814,22 @@ body.leave{
     transform:translateX(-50%) translateY(0);
 
 }
+.alertTitle{
+
+    font-size:clamp(13px,1.5vw,17px);
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+}
+
+.alertText{
+
+    margin-top:12px;
+
+    font-size:clamp(16px,2vw,22px);
+
+    font-weight:600;
+
+}
