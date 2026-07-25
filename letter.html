@@ -16,81 +16,134 @@
 
 </head>
 
+
 <body class="letterPage">
 
-    <div class="letterBackground">
 
-        <!-- Decorative Stars -->
-        <div class="letterStars" aria-hidden="true"></div>
-
-        <!-- Intro -->
-        <div class="letterIntro">
-
-            <h1>A Letter For You 💌</h1>
-
-            <p>
-                There's something I've wanted
-                to tell you...
-            </p>
-
-          <!-- Envelope -->
-<div class="envelopeContainer">
-
-    <div class="envelope"
-         id="envelope"
-         onclick="openEnvelope()">
+<div class="letterBackground">
 
 
-        <div class="envelopeBack"></div>
+    <!-- Decorative Stars -->
+    <div class="letterStars" aria-hidden="true"></div>
 
 
-        <div class="letterPaper">
 
-            <div class="letterContent">
-
-
-                <h2>
-                    Dear SUAR,
-                </h2>
+    <!-- Intro -->
+    <div class="letterIntro">
 
 
-                <div class="letterBody">
+        <h1>
+            A Letter For You 💌
+        </h1>
 
 
-                    <div id="typewriter"></div>
+        <p>
+            There's something I've wanted
+            to tell you...
+        </p>
 
 
-                    <div id="cursor"
-                         class="typingCursor"></div>
+
+        <!-- Envelope -->
+        <div class="envelopeContainer">
 
 
-                    <!-- Final Signature -->
-                    <div id="signature"
-                         class="signature">
-
-                        With love,<br>
-
-                        Rijin <span>❤️</span>
-
-                    </div>
+            <div class="envelope"
+                 id="envelope"
+                 onclick="openEnvelope()">
 
 
-                    <!-- Final Message -->
-                    <div id="finalMessage"
-                         class="finalMessage">
+
+                <div class="envelopeBack"></div>
+
+
+
+                <!-- Letter Paper -->
+
+                <div class="letterPaper">
+
+
+                    <div class="letterContent">
+
+
 
                         <h2>
-                            Thank you for being you ❤️
+                            Dear SUAR,
                         </h2>
 
-                        <p>
-                            Never change.
-                        </p>
+
+
+                        <div class="letterBody">
+
+
+                            <div id="typewriter"></div>
+
+
+
+                            <div id="cursor"
+                                 class="typingCursor"></div>
+
+
+
+                            <!-- Signature -->
+
+                            <div id="signature"
+                                 class="signature">
+
+                                With love,<br>
+
+                                Rijin <span>❤️</span>
+
+                            </div>
+
+
+
+                            <!-- Final Message -->
+
+                            <div id="finalMessage"
+                                 class="finalMessage">
+
+
+                                <h2>
+                                    Thank you for being you ❤️
+                                </h2>
+
+
+                                <p>
+                                    Never change.
+                                </p>
+
+
+                            </div>
+
+
+
+                        </div>
+
 
                     </div>
 
 
                 </div>
+
+
+
+
+                <!-- Envelope Parts -->
+
+                <div class="envelopeFlap"></div>
+
+
+                <div class="envelopeFront"></div>
+
+
+
+                <div class="envelopeSeal">
+
+                    ❤️
+
+                </div>
+
 
 
             </div>
@@ -99,19 +152,19 @@
         </div>
 
 
-        <div class="envelopeFlap"></div>
-
-
-        <div class="envelopeFront"></div>
-
-
-        <div class="envelopeSeal">
-
-            ❤️
-
-        </div>
-
 
     </div>
 
+
+
 </div>
+
+
+
+<script src="letter.js" defer></script>
+
+
+</body>
+
+
+</html>
