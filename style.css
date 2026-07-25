@@ -2406,6 +2406,12 @@ body.leave{
    ENVELOPE
 ========================================== */
 
+.envelope{
+
+    overflow:hidden;
+
+}
+
 .envelopeContainer{
 
     margin-top:50px;
@@ -2705,14 +2711,12 @@ body.leave{
 
     position:absolute;
 
-
     left:50%;
 
-    top:58%;
+    top:28%;
 
 
     transform:
-
         translate(-50%,0);
 
 
@@ -2722,15 +2726,10 @@ body.leave{
 
 
     background:
-
         linear-gradient(
-
             135deg,
-
             #ffffff,
-
             #f8f4ed
-
         );
 
 
@@ -2751,6 +2750,8 @@ body.leave{
 
 
     transition:
+
+        top .9s ease,
 
         transform .9s cubic-bezier(.22,.61,.36,1),
 
@@ -2837,27 +2838,6 @@ body.leave{
 
 }
 
-/* ===========================
-   PAPER EXPANSION
-=========================== */
-
-.envelope.expanded .letterPaper{
-
-    transform:
-        translate(-50%,-42%)
-        scale(1.02);
-
-    width:92%;
-
-    height:90%;
-
-    border-radius:18px;
-
-    box-shadow:
-
-        0 30px 70px rgba(0,0,0,.4);
-
-}
 /* ==========================================
    ENVELOPE SEAL
 ========================================== */
@@ -2939,14 +2919,6 @@ body.leave{
 
 }
 
-.envelope.open .letterPaper{
-
-    transform:
-        translateX(-50%)
-        translateY(-95px);
-
-}
-
 /* ===========================
    EXPANDED CLEANUP
 =========================== */
@@ -3016,6 +2988,13 @@ body.leave{
 
     transition:
         transform 1.1s ease;
+
+}
+
+.envelope.open .letterPaper{
+
+    transform:
+        translate(-50%,-55px);
 
 }
 
