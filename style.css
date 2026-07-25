@@ -1915,17 +1915,19 @@ body.leave{
 
     position:absolute;
 
-    width:3px;
-
-    height:3px;
-
     border-radius:50%;
 
     background:white;
 
-    box-shadow:0 0 10px white;
+    opacity:.2;
 
-    animation:twinkle 2.5s infinite alternate;
+    box-shadow:0 0 8px rgba(255,255,255,.9);
+
+    animation:
+        twinkle ease-in-out infinite,
+        drift linear infinite;
+
+    will-change:transform,opacity;
 
 }
 
@@ -1954,18 +1956,40 @@ body.leave{
 
 @keyframes twinkle{
 
-    from{
+    0%{
 
-        opacity:.2;
-        transform:scale(.7);
+        opacity:0.15;
+        transform:scale(0.6);
 
     }
 
-    to{
+    25%{
+
+        opacity:0.5;
+        transform:scale(1);
+
+    }
+
+    50%{
 
         opacity:1;
-        transform:scale(1.6);
+        transform:scale(1.5);
 
     }
 
+    75%{
+
+        opacity:0.6;
+        transform:scale(1.1);
+
+    }
+
+    100%{
+
+        opacity:0.15;
+        transform:scale(0.6);
+
+    }
+
+}
 }
