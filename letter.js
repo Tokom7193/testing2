@@ -4,20 +4,38 @@ const cursor = document.getElementById("cursor");
 
 let opened = false;
 
-const letterText = `Dear SUAR,
+const letterParts = [
 
-This is where your real letter will be.
+`Dear SUAR,
 
-Every sentence will appear naturally,
-as if someone is writing it just for you.
+`,
 
-I wanted this experience to feel personal,
-not like reading a normal webpage.
+`I've wanted to tell you something for a long time.
 
-Thank you for reaching this far.
+`,
+
+`This website wasn't made just to show you something.
+It was made so you could experience how I see you.
+
+`,
+
+`Every page...
+Every animation...
+Every little detail...
+
+was created with you in mind.
+
+`,
+
+`And now you've reached the final page.
 
 ❤️
-`;
+
+`,
+
+`— Rijin`
+
+];
 
 function openEnvelope(){
 
