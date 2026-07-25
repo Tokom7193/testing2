@@ -3623,3 +3623,63 @@ body.leave{
     }
 
 }
+
+/* ==========================================
+   FINAL CINEMATIC ENDING
+========================================== */
+
+.letterPage.endingMode{
+
+    background:
+        radial-gradient(
+            circle at center,
+            #243b55 0%,
+            #0b1626 45%,
+            #000 100%
+        );
+
+}
+
+
+/* Letter glow */
+
+.letterPage.endingMode .letterPaper{
+
+    box-shadow:
+
+        0 0 40px rgba(255,255,255,.25),
+
+        0 25px 70px rgba(0,0,0,.45);
+
+}
+
+
+/* Slow breathing glow */
+
+.letterPage.endingMode .letterContent{
+
+    animation:
+        letterGlow 4s ease-in-out infinite;
+
+}
+
+
+@keyframes letterGlow{
+
+
+    0%,100%{
+
+        filter:
+            brightness(1);
+
+    }
+
+
+    50%{
+
+        filter:
+            brightness(1.05);
+
+    }
+
+}
