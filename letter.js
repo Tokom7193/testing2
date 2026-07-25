@@ -47,6 +47,8 @@ function openEnvelope(){
 
     opened = true;
 
+   envelope.style.pointerEvents = "none";
+
 
     // Start envelope opening
     envelope.classList.add("open");
