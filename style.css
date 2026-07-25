@@ -2061,19 +2061,15 @@ body.leave{
 @keyframes starDriftFar{
 
     0%,100%{
-
         transform:
             translateY(0)
             translateX(0);
-
     }
 
     50%{
-
         transform:
             translateY(-6px)
             translateX(4px);
-
     }
 
 }
@@ -2081,19 +2077,15 @@ body.leave{
 @keyframes starDriftMid{
 
     0%,100%{
-
         transform:
             translateY(0)
             translateX(0);
-
     }
 
     50%{
-
         transform:
             translateY(-10px)
             translateX(-6px);
-
     }
 
 }
@@ -2101,19 +2093,15 @@ body.leave{
 @keyframes starDriftNear{
 
     0%,100%{
-
         transform:
             translateY(0)
             translateX(0);
-
     }
 
     50%{
-
         transform:
             translateY(-16px)
             translateX(8px);
-
     }
 
 }
@@ -2126,39 +2114,101 @@ body.leave{
 @keyframes twinkle{
 
     0%{
-
         opacity:.15;
         transform:scale(.6);
-
     }
 
     25%{
-
         opacity:.45;
         transform:scale(.9);
-
     }
 
     50%{
-
         opacity:1;
         transform:scale(1.4);
-
     }
 
     75%{
-
         opacity:.55;
         transform:scale(1);
-
     }
 
     100%{
-
         opacity:.15;
         transform:scale(.6);
-
     }
 
 }
+
+/* ===========================
+   SHOOTING STARS
+=========================== */
+
+.shootingStars{
+
+    position:absolute;
+    inset:0;
+
+    overflow:hidden;
+    pointer-events:none;
+
+    z-index:5;
+
+}
+
+.shootingStar{
+
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+        0 0 6px rgba(255,255,255,.95),
+        0 0 14px rgba(255,255,255,.6);
+
+}
+
+.shootingStar::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+    left:-140px;
+
+    width:140px;
+    height:2px;
+
+    transform:translateY(-50%);
+
+    background:linear-gradient(
+        to left,
+        rgba(255,255,255,.9),
+        transparent
+    );
+
+}
+
+@keyframes shooting{
+
+    from{
+        transform:translate(0,0);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    to{
+        transform:translate(-450px,450px);
+        opacity:0;
+    }
+
 }
