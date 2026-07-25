@@ -2879,3 +2879,59 @@ body.leave{
     }
 
 }
+
+/* ==========================================
+   LETTER BODY
+========================================== */
+
+.letterBody{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100%;
+
+}
+
+#typewriter{
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+    overflow-wrap:break-word;
+
+}
+
+#typewriter p{
+
+    margin:0 0 26px;
+
+    opacity:0;
+
+    transform:translateY(14px);
+
+    animation:paragraphReveal .8s ease forwards;
+
+}
+
+@keyframes paragraphReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(14px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
