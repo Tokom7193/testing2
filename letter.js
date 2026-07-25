@@ -330,6 +330,9 @@ function createParticles(){
     if(!letterStars) return;
 
 
+    if(letterStars.querySelector(".particle")) return;
+
+
     for(let i = 0; i < 25; i++){
 
         const particle = document.createElement("span");
