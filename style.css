@@ -3966,3 +3966,41 @@ body.leave{
     }
 
 }
+
+/* ==========================================
+   FINAL LETTER GLOW
+========================================== */
+
+.letterPaper.finalGlow{
+
+    animation:
+
+        finalPaperGlow 4s ease-in-out infinite;
+
+}
+
+
+@keyframes finalPaperGlow{
+
+    0%,100%{
+
+        box-shadow:
+
+        0 0 40px rgba(255,255,255,.25),
+
+        0 25px 70px rgba(0,0,0,.45);
+
+    }
+
+
+    50%{
+
+        box-shadow:
+
+        0 0 70px rgba(255,220,180,.45),
+
+        0 25px 90px rgba(0,0,0,.5);
+
+    }
+
+}
