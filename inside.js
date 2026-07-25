@@ -647,24 +647,38 @@ function showEnding() {
 function createStarLayer(selector, count, minSize, maxSize) {
 
     const layer = document.querySelector(selector);
+
     if (!layer) return;
 
     layer.innerHTML = "";
 
+    const fragment = document.createDocumentFragment();
+
     for (let i = 0; i < count; i++) {
 
         const star = document.createElement("span");
+
         const size = Math.random() * (maxSize - minSize) + minSize;
 
         star.style.width = size + "px";
         star.style.height = size + "px";
+
         star.style.left = Math.random() * 100 + "%";
         star.style.top = Math.random() * 100 + "%";
-        star.style.animationDuration = (3 + Math.random() * 4) + "s";
-        star.style.animationDelay = (Math.random() * 5) + "s";
 
-        layer.appendChild(star);
+        star.style.opacity = 0.2 + Math.random() * 0.8;
+
+        star.style.animationDuration =
+            (3 + Math.random() * 5) + "s";
+
+        star.style.animationDelay =
+            (Math.random() * 6) + "s";
+
+        fragment.appendChild(star);
+
     }
+
+    layer.appendChild(fragment);
 
 }
 
@@ -672,43 +686,65 @@ createStarLayer(".starsFar", 80, 1, 2);
 createStarLayer(".starsMid", 60, 2, 3);
 createStarLayer(".starsNear", 40, 3, 4);
 
+
 // ===========================
-// SHOOTING STAR GENERATOR
+// SHOOTING STARS
 // ===========================
 
-const shootingStarsLayer = document.querySelector(".shootingStars");
+const shootingLayer = document.querySelector(".shootingStars");
 
 function createShootingStar() {
 
-    if (!shootingStarsLayer) return;
+    if (!shootingLayer) return;
 
-    const star = document.createElement("span");
+    const star = document.createElement("div");
+
     star.className = "shootingStar";
 
-    const startTop = Math.random() * 40 + 5;   // 5% to 45%
-    const startLeft = Math.random() * 80 + 10;  // 10% to 90%
+    // Random starting position
+    star.style.left = (10 + Math.random() * 80) + "%";
+    star.style.top = (5 + Math.random() * 35) + "%";
 
-    star.style.top = startTop + "%";
-    star.style.left = startLeft + "%";
+    // Random duration
+    const duration = 1.2 + Math.random();
 
-    const duration = 1.2 + Math.random() * 0.8;
-    star.style.animation = `shooting ${duration}s linear forwards`;
+    star.style.animation =
+        `shooting ${duration}s linear forwards`;
 
-    shootingStarsLayer.appendChild(star);
+    // Small random angle
+    const angle = -35 + Math.random() * 20;
 
-    setTimeout(() => {
+    star.style.transform = `rotate(${angle}deg)`;
+
+    shootingLayer.appendChild(star);
+
+    star.addEventListener("animationend", () => {
+
         star.remove();
-    }, duration * 1000 + 100);
+
+    });
+
 }
 
-function scheduleShootingStar() {
+function scheduleShootingStars() {
 
-    const delay = 15000 + Math.random() * 15000; // 15–30 sec
+    const delay = 15000 + Math.random() * 15000;
 
     setTimeout(() => {
+
         createShootingStar();
-        scheduleShootingStar();
+
+        scheduleShootingStars();
+
     }, delay);
+
 }
 
-scheduleShootingStar();
+// First shooting star after 3 seconds
+setTimeout(() => {
+
+    createShootingStar();
+
+    scheduleShootingStars();
+
+}, 3000);
