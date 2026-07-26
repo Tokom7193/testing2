@@ -289,46 +289,90 @@ function pause(ms){
 
 }
 
- /* ==========================================
-    FINAL SIGNATURE REVEAL
- ========================================== */
+/* ==========================================
+   FINAL SIGNATURE REVEAL
+========================================== */
 
-function showFinalSignature(){
+async function showFinalSignature(){
+
+
+    const letterBox =
+        document.querySelector(".letterContent");
 
 
     const signature =
         document.getElementById("signature");
 
 
-    if(signature){
 
+    // Create scrolling space after last paragraph
 
-        // Reveal signature only after letter is finished
+    if(letterBox){
 
-        signature.classList.add("show");
+        letterBox.scrollTo({
 
+            top:
+                letterBox.scrollHeight + 200,
+
+            behavior:"smooth"
+
+        });
 
     }
 
 
 
-    setTimeout(()=>{
+    // Wait before showing signature
+
+    await pause(1800);
 
 
-        const finalMessage =
-            document.getElementById("finalMessage");
+
+    if(signature){
+
+        signature.classList.add("show");
+
+    }
 
 
-        if(finalMessage){
+
+    // Give space after signature
+
+    await pause(2500);
 
 
-            finalMessage.classList.add("show");
+
+    if(letterBox){
+
+        letterBox.scrollTo({
+
+            top:
+                letterBox.scrollHeight + 250,
+
+            behavior:"smooth"
+
+        });
+
+    }
 
 
-        }
+
+    // Reveal final message
+
+    await pause(1500);
 
 
-    },2500);
+
+    const finalMessage =
+        document.getElementById("finalMessage");
+
+
+
+    if(finalMessage){
+
+        finalMessage.classList.add("show");
+
+    }
 
 
 }
