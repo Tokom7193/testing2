@@ -145,43 +145,77 @@ function typeText(element,text){
 
         function type(){
 
+
             if(i >= text.length){
 
                 resolve();
+
                 return;
 
             }
 
 
+
             const char = text.charAt(i);
+
 
 
             element.textContent += char;
 
 
-            // Keep latest text visible
+
+            // Keep current paragraph visible
+            // without pushing Dear SUAR away
+
             const letterBox =
-    document.querySelector(".letterContent");
+                document.querySelector(".letterContent");
 
 
-if(letterBox){
+            if(letterBox && element){
 
-    letterBox.scrollTo({
 
-    top: letterBox.scrollHeight,
+                const elementBottom =
+                    element.offsetTop +
+                    element.offsetHeight;
 
-    behavior:"smooth"
 
-});
+                const visibleBottom =
+                    letterBox.scrollTop +
+                    letterBox.clientHeight;
 
-}
+
+
+                if(elementBottom > visibleBottom - 80){
+
+
+                    letterBox.scrollTo({
+
+                        top:
+                            elementBottom -
+                            letterBox.clientHeight +
+                            80,
+
+
+                        behavior:"smooth"
+
+                    });
+
+
+                }
+
+
+            }
+
+
 
 
 
             let speed = 45;
 
 
+
             // Natural handwriting pauses
+
 
             if(char === ","){
 
@@ -189,11 +223,13 @@ if(letterBox){
 
             }
 
+
             else if(char === "."){
 
                 speed = 450;
 
             }
+
 
             else if(char === "!"){
 
@@ -201,11 +237,13 @@ if(letterBox){
 
             }
 
+
             else if(char === "?"){
 
                 speed = 500;
 
             }
+
 
             else if(char === "\n"){
 
@@ -213,7 +251,6 @@ if(letterBox){
 
             }
 
-            // Longer pause after heart emoji
 
             else if(char === "❤️"){
 
@@ -222,21 +259,22 @@ if(letterBox){
             }
 
 
+
             i++;
 
 
             setTimeout(type,speed);
+
 
         }
 
 
         type();
 
+
     });
 
 }
-
-
 /* ==========================================
    PAUSE
 ========================================== */
