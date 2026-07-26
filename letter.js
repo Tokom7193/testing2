@@ -323,37 +323,12 @@ function pause(ms){
 async function showFinalSignature(){
 
 
-    const letterBox =
-        document.querySelector(".letterContent");
-
-
     const signature =
         document.getElementById("signature");
 
 
 
-    // Create scrolling space after last paragraph
-
-    if(letterBox){
-
-        letterBox.scrollTo({
-
-            top:
-                letterBox.scrollHeight + 200,
-
-            behavior:"smooth"
-
-        });
-
-    }
-
-
-
-    // Wait before showing signature
-
-    await pause(1800);
-
-
+    // Reveal signature
 
     if(signature){
 
@@ -363,18 +338,25 @@ async function showFinalSignature(){
 
 
 
-    // Give space after signature
+    // Give time to read signature
 
-    await pause(2500);
+    await pause(3500);
 
 
+
+    const letterBox =
+        document.querySelector(".letterContent");
+
+
+
+    // Scroll further for final message
 
     if(letterBox){
 
         letterBox.scrollTo({
 
             top:
-                letterBox.scrollHeight + 250,
+                letterBox.scrollHeight + 220,
 
             behavior:"smooth"
 
@@ -383,8 +365,6 @@ async function showFinalSignature(){
     }
 
 
-
-    // Reveal final message
 
     await pause(1500);
 
