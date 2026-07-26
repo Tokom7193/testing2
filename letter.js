@@ -110,55 +110,106 @@ async function typeParagraphs(){
 
 
 
-    // Hide typing cursor
+   // Hide typing cursor
 
-    if(cursor){
+if(cursor){
 
-        cursor.style.display = "none";
+    cursor.style.display = "none";
 
-    }
-
-
-
-    // Extra emotional pause after final paragraph
-
-    await pause(2000);
+}
 
 
 
-    // Move slightly down before signature
+// Extra emotional pause after final paragraph
 
-    const letterBox =
-        document.querySelector(".letterContent");
-
-
-    if(letterBox){
-
-        letterBox.scrollTo({
-
-            top:
-                letterBox.scrollHeight + 180,
-
-            behavior:"smooth"
-
-        });
-
-    }
+await pause(1500);
 
 
 
-    // Wait for scroll movement
+// Move smoothly to signature area
 
-    await pause(1800);
+const letterBox =
+    document.querySelector(".letterContent");
+
+
+const signature =
+    document.getElementById("signature");
 
 
 
-    // Reveal signature
+if(letterBox && signature){
 
-    showFinalSignature();
+
+    letterBox.scrollTo({
+
+        top:
+
+            signature.offsetTop -
+            80,
+
+
+        behavior:"smooth"
+
+    });
 
 
 }
+
+
+
+// Wait for scroll movement
+
+await pause(1500);
+
+
+
+// Reveal signature
+
+showFinalSignature();
+
+
+
+// Wait and reveal final message below signature
+
+setTimeout(()=>{
+
+
+    const finalMessage =
+        document.getElementById("finalMessage");
+
+
+    if(finalMessage){
+
+
+        finalMessage.classList.add("show");
+
+
+        if(letterBox){
+
+
+            setTimeout(()=>{
+
+
+                letterBox.scrollTo({
+
+                    top:
+                        letterBox.scrollHeight,
+
+                    behavior:"smooth"
+
+                });
+
+
+            },700);
+
+
+        }
+
+
+    }
+
+
+},2200);
 /* ==========================================
    TYPE TEXT
 ========================================== */
