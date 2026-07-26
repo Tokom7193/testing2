@@ -3084,25 +3084,26 @@ body.letterPage .letterBackground{
 }
 
 /* ==========================================
-   PAPER LIFT WHEN ENVELOPE OPENS
+   LETTER LIFT FROM ENVELOPE
 ========================================== */
 
 .envelope.open .letterPaper{
 
-    top:10%;
+    top:8%;
 
 
     transform:
 
         translate(-50%,0)
-        scale(.98);
+        scale(1);
 
 
     transition:
 
-        top 1.2s cubic-bezier(.22,.61,.36,1),
+        top 1.4s cubic-bezier(.22,.61,.36,1),
 
-        transform 1.2s cubic-bezier(.22,.61,.36,1);
+        transform 1.4s cubic-bezier(.22,.61,.36,1);
+
 
 }
 
