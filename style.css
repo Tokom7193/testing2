@@ -11,6 +11,7 @@ html,
 body{
 
     width:100%;
+
     min-height:100%;
 
     overflow-x:hidden;
@@ -19,23 +20,39 @@ body{
 
 }
 
+
+
 body{
 
     min-height:100vh;
+
     min-height:100dvh;
 
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
 
     padding:20px;
 
-    overflow:hidden;
+
+    overflow-x:hidden;
+
 
     position:relative;
 
+
     background:
-        radial-gradient(circle at center,#11264a 0%,#081322 45%,#02060d 100%);
+
+        radial-gradient(
+            circle at center,
+            #11264a 0%,
+            #081322 45%,
+            #02060d 100%
+        );
 
 }
 
@@ -2263,7 +2280,26 @@ body.leave{
     -webkit-tap-highlight-color:transparent;
 
 }
+/* ==========================================
+   LETTER PAGE SCROLL FIX
+========================================== */
 
+body.letterPage{
+
+    display:block;
+
+    overflow-y:auto;
+
+    padding:0;
+
+}
+
+
+body.letterPage .letterBackground{
+
+    min-height:100dvh;
+
+}
 
 /* ==========================================
    FINAL CINEMATIC MODE
