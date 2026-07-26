@@ -2897,6 +2897,7 @@ body.letterPage .letterBackground{
     border-radius:22px;
 
 
+
     box-shadow:
 
         0 35px 90px rgba(0,0,0,.45),
@@ -2907,13 +2908,15 @@ body.letterPage .letterBackground{
 
     transition:
 
-        width 1.2s cubic-bezier(.22,.61,.36,1),
+        width 1.6s cubic-bezier(.22,.61,.36,1),
 
-        height 1.2s cubic-bezier(.22,.61,.36,1),
+        height 1.6s cubic-bezier(.22,.61,.36,1),
 
-        transform 1.2s cubic-bezier(.22,.61,.36,1),
+        transform 1.6s cubic-bezier(.22,.61,.36,1),
 
-        border-radius 1.2s ease;
+        border-radius 1.6s ease,
+
+        box-shadow 1.6s ease;
 
 
 }
@@ -2927,10 +2930,10 @@ body.letterPage .letterBackground{
 
         transform:
 
-            translate(-50%,20px)
-            scale(.65);
+            translate(0,30px)
+            scale(.85);
 
-        opacity:.6;
+        opacity:.7;
 
     }
 
@@ -2939,7 +2942,7 @@ body.letterPage .letterBackground{
 
         transform:
 
-            translate(-50%,0)
+            translate(0,0)
             scale(1);
 
         opacity:1;
