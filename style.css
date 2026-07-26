@@ -3957,49 +3957,68 @@ body.leave{
 
 .finalMessage{
 
-    margin-top:40px;
+    margin-top:180px;
+
 
     text-align:center;
 
 
     opacity:0;
 
+
     transform:
-        translateY(25px);
+
+        translateY(50px)
+        scale(.96);
 
 
     transition:
 
-        opacity 1.5s ease,
+        opacity 1.8s ease,
 
-        transform 1.5s ease;
+        transform 1.8s cubic-bezier(.22,.61,.36,1);
 
 
     pointer-events:none;
 
+
+    padding-bottom:80px;
+
 }
 
 
-/* When revealed */
+
+/* ===========================
+   REVEAL
+=========================== */
 
 .finalMessage.show{
 
     opacity:1;
 
+
     transform:
-        translateY(0);
+
+        translateY(0)
+        scale(1);
 
 }
 
 
-/* Heading */
+
+/* ===========================
+   HEADING
+=========================== */
 
 .finalMessage h2{
 
-    margin:0 0 15px;
+
+    margin:
+
+        0 0 20px;
 
 
-    color:#2b2b2b;
+    color:#5a2a1f;
 
 
     font-family:
@@ -4013,23 +4032,32 @@ body.leave{
 
     font-size:
 
-        clamp(22px,4vw,36px);
+        clamp(24px,5vw,40px);
 
 
-    line-height:1.4;
+    font-weight:600;
 
+
+    line-height:1.5;
+
+
+    letter-spacing:.5px;
 
 }
 
 
-/* Sub text */
+
+/* ===========================
+   SUB TEXT
+=========================== */
 
 .finalMessage p{
+
 
     margin:0;
 
 
-    color:#555;
+    color:#7a4b3a;
 
 
     font-family:
@@ -4041,39 +4069,54 @@ body.leave{
 
     font-size:
 
-        clamp(16px,2vw,22px);
+        clamp(17px,3vw,24px);
+
+
+    line-height:1.8;
 
 }
 
 
-/* Heart glow */
+
+/* ===========================
+   HEART GLOW
+=========================== */
 
 .finalMessage h2::first-letter{
 
+
     text-shadow:
 
-        0 0 10px rgba(255,80,120,.5),
+        0 0 12px rgba(255,80,120,.6),
 
-        0 0 25px rgba(255,80,120,.35);
+        0 0 30px rgba(255,80,120,.35);
 
 }
 
 
 
-/* iPhone adjustment */
+/* ==========================================
+   MOBILE
+========================================== */
 
 @media(max-width:600px){
 
+
     .finalMessage{
 
-        margin-top:30px;
+
+        margin-top:130px;
+
+
+        padding-bottom:50px;
 
     }
 
 
     .finalMessage h2{
 
-        font-size:24px;
+
+        font-size:26px;
 
     }
 
