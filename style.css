@@ -2868,28 +2868,30 @@ body.letterPage .letterBackground{
 
 .envelope.expanded .letterPaper{
 
-    position:fixed;
+    position:absolute;
 
 
-    left:50%;
+    left:0;
 
-    top:6%;
+    top:0;
 
 
-    width:min(92vw,760px);
+    width:100%;
 
-    height:88vh;
+    height:100%;
 
 
     transform:
 
-        translate(-50%,0)
-        scale(.85);
+        translate(0,0)
+        scale(1);
+
 
 
     transform-origin:
 
-        top center;
+        center top;
+
 
 
     border-radius:22px;
@@ -2902,14 +2904,19 @@ body.letterPage .letterBackground{
         0 0 40px rgba(255,220,150,.35);
 
 
-    animation:
 
-        letterGrow .9s cubic-bezier(.22,.61,.36,1) forwards;
+    transition:
+
+        width 1.2s cubic-bezier(.22,.61,.36,1),
+
+        height 1.2s cubic-bezier(.22,.61,.36,1),
+
+        transform 1.2s cubic-bezier(.22,.61,.36,1),
+
+        border-radius 1.2s ease;
+
 
 }
-
-
-
 /* ==========================================
    SMOOTH LETTER GROW
 ========================================== */
