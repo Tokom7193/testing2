@@ -2792,18 +2792,18 @@ body.leave{
 
     left:50%;
 
-    top:8%;
+    top:6%;
 
 
     width:min(92vw,760px);
 
-    height:84vh;
+    height:88vh;
 
 
     transform:
 
         translate(-50%,0)
-        scale(1);
+        scale(.85);
 
 
     transform-origin:
@@ -2811,7 +2811,7 @@ body.leave{
         top center;
 
 
-    border-radius:20px;
+    border-radius:22px;
 
 
     box-shadow:
@@ -2820,59 +2820,46 @@ body.leave{
 
         0 0 40px rgba(255,220,150,.35);
 
+
+    animation:
+
+        letterGrow .9s cubic-bezier(.22,.61,.36,1) forwards;
+
 }
 
 
-/* ===========================
-   MOBILE ADJUSTMENT
-=========================== */
 
-@media(max-width:600px){
+/* ==========================================
+   SMOOTH LETTER GROW
+========================================== */
 
-    .envelope.expanded{
+@keyframes letterGrow{
 
-        width:94vw;
+    from{
 
-        height:90dvh;
+        transform:
+
+            translate(-50%,20px)
+            scale(.65);
+
+        opacity:.6;
+
+    }
+
+
+    to{
+
+        transform:
+
+            translate(-50%,0)
+            scale(1);
+
+        opacity:1;
 
     }
 
 }
 
-
-/* ===========================
-   PAPER TEXTURE
-=========================== */
-
-.letterPaper::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-
-    background:
-
-        radial-gradient(
-            rgba(0,0,0,.04) 1px,
-            transparent 1px
-        );
-
-
-    background-size:4px 4px;
-
-
-    opacity:.18;
-
-
-    pointer-events:none;
-
-
-    z-index:0;
-
-}
 /* ==========================================
    ENVELOPE SEAL
 ========================================== */
