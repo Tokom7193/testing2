@@ -2445,77 +2445,116 @@ body.letterPage .letterBackground{
 
 }
 /* ==========================================
+   ENVELOPE CONTAINER
+========================================== */
+
+.envelopeContainer{
+
+    margin-top:60px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:flex-start;
+
+
+    width:100%;
+
+
+    position:relative;
+
+
+}
+
+
+
+/* ==========================================
    ENVELOPE
 ========================================== */
 
 .envelope{
 
-    overflow:hidden;
-
-}
-
-.envelopeContainer{
-
-    margin-top:50px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    width:100%;
-
-}
-
-
-.envelope{
-
     position:relative;
+
 
     width:min(320px,85vw);
 
-    aspect-ratio:1.45/1;
+
+    aspect-ratio:1.45 / 1;
+
 
     cursor:pointer;
 
+
     animation:
+
         floatEnvelope 4s ease-in-out infinite;
 
+
     transition:
-        transform .6s ease;
+
+        transform .9s cubic-bezier(.22,.61,.36,1),
+
+        width .9s ease,
+
+        height .9s ease;
+
+
 
     user-select:none;
 
+
     -webkit-user-select:none;
+
 
     touch-action:manipulation;
 
+
     z-index:10;
+
+
+    overflow:visible;
+
+
+    transform-origin:
+
+        center top;
 
 }
 
 
-/* Desktop hover only */
+
+/* Desktop hover */
 
 @media (hover:hover){
 
+
     .envelope:hover{
 
-        transform:scale(1.03);
+
+        transform:
+
+            scale(1.03);
 
     }
 
 }
 
 
+
 /* Stop floating during opening */
 
 .envelope.open{
 
+
     animation:none;
 
+
 }
-
-
 /* ===========================
    EXPANDED STATE
 =========================== */
