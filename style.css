@@ -3655,9 +3655,14 @@ body.letterPage .letterBackground{
     }
 
 }
+/* ==========================================
+   SIGNATURE
+========================================== */
+
 .signature{
 
-    margin-top:120px;
+    margin-top:40px;
+
 
     text-align:right;
 
@@ -3673,7 +3678,7 @@ body.letterPage .letterBackground{
         clamp(28px,5vw,46px);
 
 
-    line-height:1.5;
+    line-height:1.4;
 
 
     color:#5a2a1f;
@@ -3686,7 +3691,8 @@ body.letterPage .letterBackground{
 
 
     transform:
-        translateY(40px)
+
+        translateY(30px)
         scale(.95);
 
 
@@ -3694,7 +3700,10 @@ body.letterPage .letterBackground{
 
         opacity 1.2s ease,
 
+        visibility 1.2s ease,
+
         transform 1.2s cubic-bezier(.22,.61,.36,1);
+
 
 
     width:100%;
@@ -3704,23 +3713,27 @@ body.letterPage .letterBackground{
 
 
     padding-right:
+
         clamp(12px,4vw,40px);
 
 
-    padding-bottom:40px;
+    padding-bottom:10px;
 
 }
 
 
-/* ===========================
+
+/* ==========================================
    SIGNATURE REVEAL
-=========================== */
+========================================== */
 
 .signature.show{
 
     opacity:1;
 
+
     visibility:visible;
+
 
     transform:
 
@@ -3731,9 +3744,9 @@ body.letterPage .letterBackground{
 
 
 
-/* ===========================
+/* ==========================================
    HEART ANIMATION
-=========================== */
+========================================== */
 
 .signature span{
 
@@ -3754,7 +3767,6 @@ body.letterPage .letterBackground{
     0%,100%{
 
         transform:scale(1);
-
 
         text-shadow:none;
 
@@ -3791,7 +3803,7 @@ body.letterPage .letterBackground{
         text-align:right;
 
 
-        margin-top:90px;
+        margin-top:25px;
 
 
         padding-right:20px;
