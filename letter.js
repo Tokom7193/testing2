@@ -183,50 +183,36 @@ function typeText(element,text){
 
 
 
-            const char = text.charAt(i);
+            element.textContent += text.charAt(i);
 
 
 
-            element.textContent += char;
-
-
-
-            // Keep current paragraph visible
-            // without pushing Dear SUAR away
+            // Keep typing area visible
 
             const letterBox =
                 document.querySelector(".letterContent");
 
 
-            if(letterBox && element){
+            if(letterBox){
 
 
-                const elementBottom =
+                const cursorPosition =
                     element.offsetTop +
                     element.offsetHeight;
 
 
-                const visibleBottom =
-                    letterBox.scrollTop +
-                    letterBox.clientHeight;
+                const targetScroll =
+                    cursorPosition -
+                    letterBox.clientHeight +
+                    140;
 
 
 
-                if(elementBottom > visibleBottom - 80){
+                if(targetScroll > letterBox.scrollTop){
 
 
-                    letterBox.scrollTo({
-
-                        top:
-                            elementBottom -
-                            letterBox.clientHeight +
-                            80,
-
-
-                        behavior:"smooth"
-
-                    });
-
+                    letterBox.scrollTop =
+                        targetScroll;
 
                 }
 
@@ -235,53 +221,31 @@ function typeText(element,text){
 
 
 
-
-
-            let speed = 45;
+            let speed = 38;
 
 
 
-            // Natural handwriting pauses
+            if(text.charAt(i) === ","){
 
-
-            if(char === ","){
-
-                speed = 180;
+                speed = 160;
 
             }
 
+            else if(text.charAt(i) === "."){
 
-            else if(char === "."){
-
-                speed = 450;
-
-            }
-
-
-            else if(char === "!"){
-
-                speed = 500;
+                speed = 350;
 
             }
 
+            else if(text.charAt(i) === "\n"){
 
-            else if(char === "?"){
-
-                speed = 500;
-
-            }
-
-
-            else if(char === "\n"){
-
-                speed = 250;
+                speed = 200;
 
             }
 
+            else if(text.charAt(i) === "?"){
 
-            else if(char === "❤️"){
-
-                speed = 600;
+                speed = 350;
 
             }
 
@@ -294,6 +258,7 @@ function typeText(element,text){
 
 
         }
+
 
 
         type();
