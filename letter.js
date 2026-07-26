@@ -120,13 +120,40 @@ async function typeParagraphs(){
 
 
 
-    // Small emotional pause before signature
+    // Extra emotional pause after final paragraph
 
-    await pause(1500);
+    await pause(2000);
 
 
 
-    // Reveal signature only after complete letter
+    // Move slightly down before signature
+
+    const letterBox =
+        document.querySelector(".letterContent");
+
+
+    if(letterBox){
+
+        letterBox.scrollTo({
+
+            top:
+                letterBox.scrollHeight + 180,
+
+            behavior:"smooth"
+
+        });
+
+    }
+
+
+
+    // Wait for scroll movement
+
+    await pause(1800);
+
+
+
+    // Reveal signature
 
     showFinalSignature();
 
